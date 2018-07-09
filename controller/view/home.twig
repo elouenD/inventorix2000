@@ -1,24 +1,73 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./_lib/bootstrap/css/bootstrap.css">
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Message: {{ name }}!</h1>
+{% include('header.twig') %}
 
 
+  <header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url('./assets/informatique.jpg')">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('./assets/informatique2.jpg')">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <!-- Slide Three - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('./assets/informatique3.jpg')">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </header>
 
+  <!-- Page Content -->
+  <section class="py-5">
+    <div class="container">
+      <h1>{{ appName }}</h1>
+      <p>
+        Bienvenue sur Inventorix 2000, le site de réservation de matériels informatique en ligne. Ici aucun problème de gestion, on vous garantie une parfaite gestion du matériel grâce à notre génération de code barre. Vous pouvez donc facilement gérer le matériel emprunté, mais aussi les utilisateurs et les étudiants qui ont accès au site. Grâce à Inventorix 2000 vous n'aurez plus aucun problème.
+      </p>
+    </div>
+  </section>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="./_lib/bootstrap/js/bootstrap.min.js" ></script>
-  </body>
-</html>
+  <canvas id="donut" width="400" height="400"></canvas>
 
+{% include('footer.twig') %}
+
+<script>
+      new Chart(document.getElementById("donut"), {
+          type: 'doughnut',
+          data: {
+            labels: ["Disponible", "Emprunté"],
+            datasets: [
+              {
+                label: "Matériel Emprunté",
+                backgroundColor: ["#34495e", "#c0392b"],
+                data: [213, 123]
+              }
+            ]
+          },
+          options: {
+            title: {
+              display: true,
+              text: 'Matériel Disponible'
+            }
+          }
+      });
+    </script>

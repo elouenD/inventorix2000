@@ -2,55 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a91f2e6-58e0-430a-99c1-0c3485de595a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base_donnée/base_php.sql" beforeDir="false" afterPath="$PROJECT_DIR$/controller/Base_donnée/base_php.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cours.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/include.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/listeLivres.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/listeLivres.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/emprunt/emprunt.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/emprunt/emprunt.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/emprunt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/emprunt/emprunt.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/emprunt.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/etudiant-create/etudiant-create.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/etudiant-create/etudiant-create.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/etudiant-create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/etudiant-create/etudiant-create.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/etudiant-create.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/etudiant-detail/etudiant-detail.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/etudiant-detail/etudiant-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/etudiant-detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/etudiant-detail/etudiant-detail.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/etudiant-detail.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/etudiant/etudiant.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/etudiant/etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/etudiant/etudiant.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/etudiant.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home/home.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home/home.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/home.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login/login.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/login.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/materiel-create/materiel-create.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/materiel-create/materiel-create.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/materiel-create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/materiel-create/materiel-create.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/materiel-create.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/materiel-detail/materiel-detail.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/materiel-detail/materiel-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/materiel-detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/materiel-detail/materiel-detail.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/materiel-detail.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/materiel/materiel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/materiel/materiel.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/materiel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/materiel/materiel.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/materiel.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/utilisateur-create/utilisateur-create.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/utilisateur-create/utilisateur-create.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/utilisateur-create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/utilisateur-create/utilisateur-create.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/utilisateur-create.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/utilisateur-detail/utilisateur-detail.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/utilisateur-detail/utilisateur-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/utilisateur-detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/utilisateur-detail/utilisateur-detail.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/utilisateur-detail.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/utilisateur/utilisateur.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/utilisateur/utilisateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/utilisateur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/utilisateur/utilisateur.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/utilisateur.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/header.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/index.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/listeLivres.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/listeLivres.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/main.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/etudiant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/view/etudiant.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/etudiant.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/view/header.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/header.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,6 +24,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
               <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="etudiant.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/etudiant.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -103,8 +67,17 @@
       <file leaf-file-name="header.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/view/header.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+            <state relative-caret-position="264">
+              <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="etudiant.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/view/etudiant.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -114,6 +87,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
               <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/view/index.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="13" lean-forward="true" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -145,6 +127,9 @@
         <option value="$PROJECT_DIR$/controller/header.php" />
         <option value="$PROJECT_DIR$/controller/include.php" />
         <option value="$PROJECT_DIR$/controller/main.php" />
+        <option value="$PROJECT_DIR$/controller/etudiant.php" />
+        <option value="$PROJECT_DIR$/controller/view/index.twig" />
+        <option value="$PROJECT_DIR$/controller/view/etudiant.twig" />
         <option value="$PROJECT_DIR$/controller/view/header.twig" />
       </list>
     </option>
@@ -267,12 +252,12 @@
       <workItem from="1528717989055" duration="179000" />
       <workItem from="1528724215960" duration="373000" />
       <workItem from="1530903818490" duration="602000" />
-      <workItem from="1531142260346" duration="2865000" />
+      <workItem from="1531142260346" duration="3805000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6390000" />
+    <option name="totallyTimeSpent" value="7330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="2050" height="1164" extended-state="6" />
@@ -285,7 +270,7 @@
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33492365" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37118322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -466,20 +451,6 @@
     <entry file="file://$PROJECT_DIR$/_lib/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/view/index.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/view/etudiant.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/view/etudiant-create.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -502,13 +473,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/etudiant/etudiant.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/etudiant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/controller.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -533,10 +497,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/header.php">
+    <entry file="file://$PROJECT_DIR$/controller/view/emprunt.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="25" />
+        <state relative-caret-position="299">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -554,13 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/view/emprunt.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/include.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -568,10 +525,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controller/view/index.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" lean-forward="true" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/etudiant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/view/etudiant.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/view/header.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        <state relative-caret-position="264">
+          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
         </state>
       </provider>
     </entry>

@@ -1,24 +1,48 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% include('header.twig') %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./_lib/bootstrap/css/bootstrap.css">
+<!-- Page Content -->
+	<section class="py-5">
+    	<div class="container">
+      		<h1>{{ appName }}</h1>
+      		<h2>
+       			Formulaire d'ajout de materiel
+      		</h2>
+			<br> 
+      		<form>
+ 				<div class="form-row">
+    				<div class="form-group col-md-6">
+      					<label for="codeBarre">Code Barre</label>
+      					<input type="number" class="form-control" id="codeBarre" placeholder="Code Barre">
+    				</div>
+    				<div class="form-group col-md-6">
+      					<label for="nomMateriel">Nom</label>
+      					<input type="text" class="form-control" id="nomMateriel" placeholder="Nom">
+    				</div>
+				</div>
+  				<div class="form-group">
+    				<label for="description">Description</label>
+    				<input type="text" class="form-control" id="description" placeholder="Description">
+ 				</div>
+  				<div class="form-row">
+    				<div class="form-group col-md-4">
+      					<label for="dateAchat">Date d'achat</label>
+      					<input type="date" class="form-control" id="dateAchat">
+    				</div>
+    				<div class="form-group col-md-4">
+      					<label for="prixAchat">Prix d'achat</label>
+      					<input type="number" class="form-control" id="prixAchat" placeholder="Prix d'achat">
+    				</div>
+  				</div>
+  				<div class="form-group">
+    				<label for="fournisseur">Fournisseur</label>
+    				    <select id="inputState" class="form-control">
+    				      	<option selected>Choisir...</option>
+        					<option>...</option>
+						</select>
+ 				</div>
+			<button type="submit" class="btn btn-primary">Valider</button>
+			</form>
+    	</div>
+  	</section>
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Message: {{ name }}!</h1>
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="./_lib/bootstrap/js/bootstrap.min.js" ></script>
-  </body>
-</html>
-
+{% include('footer.twig') %}

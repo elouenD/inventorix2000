@@ -1,5 +1,7 @@
 <?php
-require_once("../_lib/vendor/autoload.php");
-$loader = new \Twig_Loader_Filesystem(__DIR__.'/view');
-$twig = new \Twig_Environment($loader);
-echo $twig->render('utilisateur.twig', ['name' => "page utilisateur"]);
+require_once("include.php");
+
+// Set navigation
+$nav = (object) ['accueil' => false, 'materiel' => false, 'emprunt' => false, 'utilisateur' => true, 'etudiant' => false];
+
+echo $twig->render('utilisateur.twig', ['name' => "page utilisateur", 'nav' => $nav]);

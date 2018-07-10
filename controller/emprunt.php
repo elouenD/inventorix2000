@@ -1,6 +1,8 @@
 <?php
-require_once("../_lib/vendor/autoload.php");
-$loader = new \Twig_Loader_Filesystem(__DIR__.'/view');
-$twig = new \Twig_Environment($loader);
-echo $twig->render('emprunt.twig', array('name' => "page emprunt", 'autre' => "autre chose"));
+require_once("include.php");
+
+// Set navigation
+$nav = (object) ['accueil' => false, 'materiel' => false, 'emprunt' => true, 'utilisateur' => false, 'etudiant' => false];
+
+echo $twig->render('emprunt.twig', ['name' => "page emprunt", 'autre' => "autre chose", 'nav' => $nav]);
 ?>

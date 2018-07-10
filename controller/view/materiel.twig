@@ -1,15 +1,22 @@
 {% include('header.twig') %}
 
-<h2>Liste du matériel</h2>
-<br>
+<div class="page">
+
+  <h2>Liste du matériel</h2>
+  <br>
 
 
-<ul class="list-group">
-    {% for materiel in materiel %}
+  <ul class="list-group">
+      {% for materiel in materiel %}
 
-        <li class="list-group-item">{{ materiel.Id}} - {{ materiel.Nom}}</li>
-    {% endfor %}
-</ul>
+          <li class="list-group-item">{{ materiel.Id}} - {{ materiel.Nom }}</li>
+      {% endfor %}
+  </ul>
+  <br>
+<div>
+
 
 
 {% include('footer.twig') %}
+
+

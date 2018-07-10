@@ -67,7 +67,7 @@
               {
                 label: "Matériel Emprunté",
                 backgroundColor: ["#27ae60", "#2980b9"],
-                data: [213, 123]
+                data: [{{ statsMaterielDispo }}, {{ statsEmprunt }}]
               }
             ]
           },
@@ -97,7 +97,7 @@
               {
                 label: "Matériel à Rendre",
                 backgroundColor: ["#c0392b", "#d35400"],
-                data: [5, 25]
+                data: [{{ statsEmpruntNonRendu }}, {{ statMaterielRendre }}]
               }
             ]
           },

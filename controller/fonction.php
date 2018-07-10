@@ -21,7 +21,20 @@ function userInfo()
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
 
-    $statement = $bdd->prepare("SELECT * FROM utilisateur");
+    $statement = $bdd->prepare("SELECT * FROM utilisateur where deleted=0 and responsable=1");
+    $statement->execute();
+    $dataUser = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $bdd=NULL;
+    return $dataUser;
+}
+
+function etudiantInfo()
+{
+    $bdd=NULL;
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
+
+    $statement = $bdd->prepare("SELECT * FROM utilisateur where deleted=0 and responsable=0");
     $statement->execute();
     $dataUser = $statement->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;

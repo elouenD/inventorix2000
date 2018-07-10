@@ -1,6 +1,14 @@
 {% include('header.twig') %}
 
-  <h1>Message: {{ name }}!</h1>
+  <br><br><br>
+  <h2>Liste des utilisateurs</h2>
+  <ul class="list-group">
+    {% for user in user %}
+
+        <li class="list-group-item">{{ user.Id}} - {{ user.Nom}} - {{user.Prenom}}</li>
+    {% endfor %}
+</ul>
+<br><br>
 
 {% include('footer.twig') %}
 

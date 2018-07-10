@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 09 juil. 2018 à 12:04
+-- Généré le :  mar. 10 juil. 2018 à 07:14
 -- Version du serveur :  5.7.19
 -- Version de PHP :  7.1.9
 
@@ -53,15 +53,15 @@ INSERT INTO `fournisseur` (`Id`, `Nom`, `Adresse`) VALUES
 
 DROP TABLE IF EXISTS `materiel`;
 CREATE TABLE IF NOT EXISTS `materiel` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `CodeBarre` varchar(255) DEFAULT NULL,
   `Nom` varchar(512) DEFAULT NULL,
   `Description` varchar(512) DEFAULT NULL,
   `DateAchat` date DEFAULT NULL,
   `PrixAchat` float DEFAULT NULL,
-  `Deleted` tinyint(4) DEFAULT NULL,
+  `Deleted` tinyint(4) DEFAULT '0',
   `Fournisseur_Id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`Id`),
   KEY `fk_Materiel_Fournisseur1_idx` (`Fournisseur_Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `materiel` (
 -- Déchargement des données de la table `materiel`
 --
 
-INSERT INTO `materiel` (`id`, `CodeBarre`, `Nom`, `Description`, `DateAchat`, `PrixAchat`, `Deleted`, `Fournisseur_Id`) VALUES
+INSERT INTO `materiel` (`Id`, `CodeBarre`, `Nom`, `Description`, `DateAchat`, `PrixAchat`, `Deleted`, `Fournisseur_Id`) VALUES
 (1, '123456789', 'Oscilloscope numérique VOLTCRAFT DSO-1062D\r\n', 'Un modèle pratique pour découvrir le monde des oscilloscopes. L\'appareil dispose de deux canaux avec une bande passante de 60 MHz. La fréquence d\'échantillonnage est de 1 Géch/s en temps réel, la mémoire de 512 kpts. Un grand écran couleur 17,7 cm (7\") a été intégré. Il offre une résolution de 800 x 480 pixels ', '2018-07-01', 399.99, 0, 3),
 (2, '1231111', 'Apple MacBook Pro 13.3\" 128 Go SSD 8 Go RAM Intel Core i5 bicœur à 2,3 GHz Gris sidéral ', 'Apple MacBook Pro 13.3\" 128 Go SSD 8 Go RAM Intel Core i5 bicœur à 2,3 GHz Gris sidéral ', '2018-06-03', 1500, NULL, 2);
 
@@ -90,14 +90,17 @@ CREATE TABLE IF NOT EXISTS `pret` (
   PRIMARY KEY (`Id`,`Utilisateur_Id`,`Materiel_id`),
   KEY `fk_Pret_Utilisateur_idx` (`Utilisateur_Id`),
   KEY `fk_Pret_Materiel1_idx` (`Materiel_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `pret`
 --
 
 INSERT INTO `pret` (`Id`, `DateDebut`, `DateFinPrevu`, `DateRendu`, `Utilisateur_Id`, `Materiel_id`) VALUES
-(1, '2018-07-10', '2018-07-12', NULL, 2, 2);
+(1, '2018-07-10', '2018-07-12', NULL, 2, 2),
+(2, '2018-07-10', '2018-07-13', '2018-07-12', 2, 2),
+(3, '2018-07-06', '2018-07-10', '2018-07-11', 2, 2),
+(4, '2018-07-06', '2018-07-08', '2018-07-08', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -149,7 +152,7 @@ ALTER TABLE `materiel`
 -- Contraintes pour la table `pret`
 --
 ALTER TABLE `pret`
-  ADD CONSTRAINT `fk_Pret_Materiel1` FOREIGN KEY (`Materiel_id`) REFERENCES `materiel` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Pret_Materiel1` FOREIGN KEY (`Materiel_id`) REFERENCES `materiel` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Pret_Utilisateur` FOREIGN KEY (`Utilisateur_Id`) REFERENCES `utilisateur` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 

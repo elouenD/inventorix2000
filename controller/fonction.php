@@ -92,6 +92,23 @@ function connect($login,$password){
     return $connect;
 }
 
+function getID($login,$password){
+    $connect=false;
+    $id;
+    $allUser=userInfo();
+    $length=count($allUser);
+    for ($i = 0; $i < $length; $i++) {
+        if($allUser[$i]['Login']==$login)
+        {
+            if($allUser[$i]['Password']==$password){
+                $connect=true;
+                $id=$allUser[$i]['Id'];
+            }
+        }
+
+    }
+    return $id;
+}
 
 //Emprunt 
 
@@ -143,14 +160,14 @@ function materielInfo()
     $bdd=NULL;
     return $dataMateriel;
 }
-
-function updateMateriel(){
+/*
+function updateMateriel($){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
     $updateMateriel = $bdd->prepare("UPDATE `pret` SET `DateRendu` = ? WHERE `pret`.`Id` = ?");
     $updateMateriel->execute(array());    
-}
+}*/
 //Améliorer avec des objets directement
 function createMateriel($codeBarre,$nom,$description,$dateAchat,$prixAchat,$fournisseurId){
     $bdd=NULL;

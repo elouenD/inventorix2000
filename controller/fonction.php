@@ -174,28 +174,68 @@ function deleteMateriel($idMateriel){
 
 
 //Statistique
-/*
+
 
 //Nombre de matériels emprunté en ce moment
+function statsEmprunt(){
+    $bdd=NULL;
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
+    $statement = $bdd->prepare("SELECT COUNT(*) FROM `pret` WHERE (`DateRendu`>NOW() or `DateRendu`is NULL)");
+    $statement->execute();
+    $statEmprunt = $statement->fetch();
+    $statEmprunt=$statEmprunt[0];
+    $bdd=NULL;
+    return $statEmprunt;
 
-SELECT * FROM `pret` WHERE (`DateRendu`>NOW() or `DateRendu`is NULL)
-
+}
 //Nombre de matériels non rendu (qui aurait du être rendu)
-SELECT (*) FROM `pret` WHERE (`DateRendu`>`DateFinPrevu` or DateRendu is NULL)
+function statsEmpruntNonRendu(){
+    $bdd=NULL;
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
+    $statement = $bdd->prepare("SELECT COUNT(*) FROM `pret` WHERE (`DateRendu`>`DateFinPrevu` or DateRendu is NULL)");
+    $statement->execute();
+    $statEmpruntNonRendu = $statement->fetch();
+    $statEmpruntNonRendu=$statEmpruntNonRendu[0];
+    $bdd=NULL;
+    return $statEmpruntNonRendu;
+
+}
 
 //Nombre de matériels total
-SELECT count(*) FROM `materiel`
+function statsMateriel(){
+    $bdd=NULL;
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
+    $statement = $bdd->prepare("SELECT count(*) FROM `materiel` WHERE DELETED=0");
+    $statement->execute();
+    $statMateriel = $statement->fetch();
+    $statMateriel=$statMateriel[0];
+    $bdd=NULL;
+    return $statMateriel;
+
+}
 
 //Nombre de matériel à rendre dans les 30 jours à venir
-SELECT * from PRET where (`DateFinPrevu`<= DATE_ADD(NOW(), INTERVAL 30 DAY))
-SELECT count(*) from PRET where (`DateFinPrevu`<= DATE_ADD(NOW(), INTERVAL 30 DAY))
-*/
+function statMaterielRendre(){
+    $bdd=NULL;
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
+    $statement = $bdd->prepare("SELECT count(*) from PRET where (`DateFinPrevu`<= DATE_ADD(NOW(), INTERVAL 30 DAY))");
+    $statement->execute();
+    $statMaterielRendre = $statement->fetch();
+    $statMaterielRendre=$statMaterielRendre[0];
+    $bdd=NULL;
+    return $statMaterielRendre;
+
+}
+
 function main(){
     
 
    $users=userInfo();
-   
-   
+  
 }
 
 main();

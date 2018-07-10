@@ -276,6 +276,42 @@ function statMaterielRendre(){
 
 }
 
+//recherche par Description
+function findMaterielbyDescription($description_find){
+    $bdd=NULL;
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
+    $findDesc = $bdd->prepare("SELECT * FROM `materiel` WHERE DESCRIPTION LIKE '%?%'");
+    $findDesc->execute(array($description_find));    
+    $findDesc = $findDesc->fetchAll(PDO::FETCH_ASSOC);
+    $bdd=NULL;
+    return $findDesc;
+}
+//recherche par NOM 
+function findMaterielbyName($name_find){
+    $bdd=NULL;
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
+    $findName = $bdd->prepare("SELECT * FROM `materiel` WHERE NAME LIKE '%?%'");
+    $findName->execute(array($name_find));    
+    $findName = $findDesc->fetchAll(PDO::FETCH_ASSOC);
+    $bdd=NULL;
+    return $findName;
+
+}
+//recherche par code_Barre
+function findMaterielbyCB($cb_find){
+    $bdd=NULL;
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
+    $findCB = $bdd->prepare("SELECT * FROM `materiel` WHERE CodeBarre = ? ");
+    $findCB->execute(array($cb_find));    
+    $findCB = $findCB->fetchAll(PDO::FETCH_ASSOC);
+    $bdd=NULL;
+    return $findCB;
+}
+
+
 function main(){
     
 

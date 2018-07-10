@@ -110,6 +110,10 @@ function getID($login,$password){
     return $id;
 }
 
+function coucou(){
+    echo 'coucou!';
+}
+
 //Emprunt 
 
 function empruntInfo()

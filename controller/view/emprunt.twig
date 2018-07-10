@@ -1,7 +1,20 @@
 {% include('header.twig') %}
+<?php include('../fonction.php');?>
 <br><br><br>
 <h1>Message: {{ name }}!</h1>
 <h2>Message 2: {{ autre }}!</h2>
+
+<p>
+{% for emprunt in emprunt %}
+         {{ emprunt.Id }}
+         {{emprunt.DateDebut}}
+         {{emprunt.DateFinPrevu}}
+         {{emprunt.DateRendu}}
+         {{emprunt.Utilisateur_Id}}
+         {{emprunt.Materiel_Id}}
+         <br>
+   {% endfor %}
+</p>
 
 
 

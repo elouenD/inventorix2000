@@ -191,8 +191,19 @@ function deleteMateriel($idMateriel){
 
 
 
-// 
+// Fournisseur 
+function materielFournisseur()
+{
+    $bdd=NULL;
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
 
+    $statement = $bdd->prepare("SELECT * FROM `fournisseur`");
+    $statement->execute();
+    $dataFournisseur = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $bdd=NULL;
+    return $dataFournisseur;
+}
 
 //Statistique
 

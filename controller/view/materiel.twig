@@ -4,4 +4,12 @@
 
     <h2> page matériel</h2>
 
+<ul class="list-group">
+    {% for materiel in materiel %}
+
+        <li class="list-group-item">{{ materiel.Id}} - {{ materiel.Nom}}</li>
+    {% endfor %}
+</ul>
+
+
 {% include('footer.twig') %}

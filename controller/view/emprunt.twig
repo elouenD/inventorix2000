@@ -1,20 +1,31 @@
 {% include('header.twig') %}
 <?php include('../fonction.php');?>
 <br><br><br>
-<h1>Message: {{ name }}!</h1>
-<h2>Message 2: {{ autre }}!</h2>
 
-<p>
-{% for emprunt in emprunt %}
-         {{ emprunt.Id }}
-         {{emprunt.DateDebut}}
-         {{emprunt.DateFinPrevu}}
-         {{emprunt.DateRendu}}
-         {{emprunt.Utilisateur_Id}}
-         {{emprunt.Materiel_Id}}
-         <br>
-   {% endfor %}
-</p>
+
+
+<table border=1 align=center>
+   <caption align='center'>Historique Emprunt</caption>
+
+   <tr>
+       <th align=center>ID Emprunt</th>
+       <th align=center>Date de Debut</th>
+       <th align=center>Date de Fin Prevu</th>
+       <th align=center>Date de Rendu</th>
+       <th align=center>ID Utilisateur </th>
+       <th align=center>ID Materiel</th>
+   </tr>
+    {% for emprunt in emprunt %}
+        <tr>
+            <td align=center>{{ emprunt.Id }}</td>
+            <td align=center>{{emprunt.DateDebut}}</td>
+            <td align=center>{{emprunt.DateFinPrevu}}</td>
+            <td align=center>{{emprunt.DateRendu}}</td>
+            <td align=center>{{emprunt.Utilisateur_Id}}</td>
+            <td align=center>{{emprunt.Materiel_id}}</td>
+        </tr>     
+    {% endfor %}
+</table>
 
 
 

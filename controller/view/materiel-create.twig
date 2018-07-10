@@ -3,7 +3,7 @@
 <!-- Page Content -->
 	<section class="py-5">
     	<div class="container">
-      		<h1>{{ appName }}</h1>
+      		
       		<h2>
        			Formulaire d'ajout de materiel
       		</h2>
@@ -36,8 +36,9 @@
   				<div class="form-group">
     				<label for="fournisseur">Fournisseur</label>
     				    <select id="inputState" class="form-control">
-    				      	<option selected>Choisir...</option>
-        					<option>...</option>
+    				    	{% for fournisseur in fournisseur %}    				    	
+	        					<option>{{ fournisseur.Nom }}</option>
+	        				{% endfor %}
 						</select>
  				</div>
 			<button type="submit" class="btn btn-primary">Valider</button>

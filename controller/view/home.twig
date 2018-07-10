@@ -46,28 +46,77 @@
     </div>
   </section>
 
-  <canvas id="donut" width="400" height="400"></canvas>
+  <div class="chart-container">
+      <div class="doughnut-chart-container">
+          <canvas id="doughnut-materiel-dispo"></canvas>
+      </div>
+
+      <div class="doughnut-chart-container">
+          <canvas id="doughnut-materiel-a-rendre"></canvas>
+      </div>
+  </div>
 
 {% include('footer.twig') %}
 
 <script>
-      new Chart(document.getElementById("donut"), {
+      new Chart(document.getElementById("doughnut-materiel-dispo"), {
           type: 'doughnut',
           data: {
             labels: ["Disponible", "Emprunté"],
             datasets: [
               {
                 label: "Matériel Emprunté",
-                backgroundColor: ["#34495e", "#c0392b"],
+                backgroundColor: ["#27ae60", "#2980b9"],
                 data: [213, 123]
               }
             ]
           },
           options: {
+            responsive: true,
             title: {
               display: true,
-              text: 'Matériel Disponible'
+              text: 'Matériel disponible',
+              fontSize: 18,
+              fontColor: "#111"
+            },
+            legend: {
+                display: true,
+                position: "bottom",
+                labels: {
+                    fontColor: "#333",
+                    fontSize: 16
+                }
             }
           }
       });
-    </script>
+      new Chart(document.getElementById("doughnut-materiel-a-rendre"), {
+          type: 'doughnut',
+          data: {
+            labels: ["Non Rendu", "Bientôt à Rendre"],
+            datasets: [
+              {
+                label: "Matériel à Rendre",
+                backgroundColor: ["#c0392b", "#d35400"],
+                data: [5, 25]
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Matériel à Rendre',
+              fontSize: 18,
+              fontColor: "#111"
+            },
+            legend: {
+                display: true,
+                position: "bottom",
+                labels: {
+                    fontColor: "#333",
+                    fontSize: 16
+                }
+            }
+          }
+      });
+</script>

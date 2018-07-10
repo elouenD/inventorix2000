@@ -29,3 +29,22 @@ body {
   background-color: #da212f;
   color: #fff;
 }
+
+.chart-container {
+  height: 360px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1300px;
+}
+
+@media (max-width: 1200px) {
+  .chart-container {
+    height: 720px;
+    width: 600px;
+  }
+}
+
+.doughnut-chart-container {
+  width: 600px;
+  display: inline-block;
+}

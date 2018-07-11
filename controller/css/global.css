@@ -61,6 +61,14 @@ body {
   float: right;
 }
 
-.btn-add-materiel{
+.btn-add{
   color: white;
+}
+
+.list-group-item:focus, .list-group-item:hover{
+  background-color: #EEE;
+}
+
+.list-group-item:active{
+  background-color: #DDD;
 }

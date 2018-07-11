@@ -1,5 +1,9 @@
 <?php
-require_once("./_lib/vendor/autoload.php");
-$loader = new \Twig_Loader_Filesystem(__DIR__.'/templates');
-$twig = new \Twig_Environment($loader);
-echo $twig->render('index.twig', ['name' => "hello woefezffssefezfrld"]);
+require_once("include.php");
+
+// Set navigation
+$nav = (object) ['accueil' => false, 'materiel' => false, 'emprunt' => false, 'utilisateur' => false, 'etudiant' => true];
+
+$id = $_GET['id'];
+
+echo $twig->render('etudiant-detail.twig', ['id' => $id, 'nav' => $nav]);

@@ -54,7 +54,7 @@ function userInfospec($id)
 
     $statement = $bdd->prepare("SELECT * FROM utilisateur where Id=$id");
     $statement->execute();
-    $datauser = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $dataUserSpec = $statement->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;
     return $dataUserSpec;
 }

@@ -5,24 +5,24 @@
     <h2> Materiel Details {{ id }}</h2>
     
     <ul class="list-group">
-     
-    <li class="list-group-item" >ID :{{ spec.Id }}</li>
-    <li class="list-group-item" >NOM : {{ spec.Nom }}</li>
-    <li class="list-group-item">CodeBarre : {{spec.CodeBarre}}</li>
-    <li class="list-group-item" >Description : {{ spec.Description }}</li>
-    <li class="list-group-item" >DateAchat : {{ spec.DateAchat }}</li>
-  </ul>
-    <button type="button" class="btn btn-primary">Primary</button>
+      <li class="list-group-item" >ID :{{ spec.Id }}</li>
+      <li class="list-group-item" >NOM : {{ spec.Nom }}</li>
+      <li class="list-group-item">CodeBarre : {{spec.CodeBarre}}</li>
+      <li class="list-group-item" >Description : {{ spec.Description }}</li>
+      <li class="list-group-item" >DateAchat : {{ spec.DateAchat }}</li>
+      <span class="right-align">
+				<button type="button" class=" btn btn-success btn-add-materiel" aria-label="Left Align" onclick="toggleEmprunt({{spec.Id}});">
+				<i class="fa fa-plus"></i>
+				Emprunter
+				</button>
+		  </span>
+    </ul>
   </div>
 
 {% include('footer.twig') %}
 
 <script>
-
- 
-
-  function toggleEmprunt( spec.Id ){
-    window.location.href = "materiel-detail.php?id="+id;
+ function toggleEmprunt(idMat){
+    window.location.href = "emprunt-create.php?id="+idMat;
   }
-
 </script>

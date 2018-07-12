@@ -1,8 +1,15 @@
 {% include('header.twig') %}
-
+  
   <div class="page">
     <button type="button" class="btn btn-link"><a href="etudiant.php">&lt Retour</a></button>
-    <h2> Etudiant Details {{ id }}</h2>
+    <h2> Etudiant Details </h2>
+    <ul class="list-group">
+      <li class="list-group-item" >ID :{{ userInfo.Id }}</li>
+      <li class="list-group-item" >NOM : {{ userInfo.Nom }}</li>
+      <li class="list-group-item">Prenom : {{userInfo.Prenom}}</li>
+      <li class="list-group-item" >Mail : {{ userInfo.Mail }}</li>
+      <li class="list-group-item" >Login : {{ userInfo.Login }}</li>
+    </ul>    
   </div>
 
 {% include('footer.twig') %}

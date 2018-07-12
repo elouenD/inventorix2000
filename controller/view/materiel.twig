@@ -2,21 +2,39 @@
 
 <div class="page">
 
-  <h2>Liste du matériel</h2>
+  <h2 class="left-align">Liste du matériel</h2>
+  <span class="right-align">
+    <button type="button" class=" btn btn-success btn-add" aria-label="Left Align" onclick="toggleFormAddMateriel();">
+      <i class="fa fa-plus"></i>
+      Ajouter Matériel
+    </button>
+  </span>
+  <br>
+  <br>
   <br>
 
 
   <ul class="list-group">
       {% for materiel in materiel %}
-
-          <li class="list-group-item">{{ materiel.Id}} - {{ materiel.Nom }}</li>
+          <li class="list-group-item" onclick="toggleMaterielDetail({{materiel.Id}});">{{ materiel.Id }} - {{ materiel.Nom }}</li>
       {% endfor %}
   </ul>
   <br>
-<div>
+</div>
 
 
 
 {% include('footer.twig') %}
 
 
+<script>
+
+  function toggleFormAddMateriel(){
+    window.location.href = "materiel-create.php";
+  }
+
+  function toggleMaterielDetail(id){
+    window.location.href = "materiel-detail.php?id="+id;
+  }
+
+</script>

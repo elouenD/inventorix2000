@@ -3,7 +3,7 @@
 <!-- Page Content -->
 	<section class="py-5">
     	<div class="container">
-      		
+      		<button type="button" class="btn btn-link"><a href="materiel.php">&lt Retour</a></button>
       		<h2>
        			Formulaire d'ajout de materiel
       		</h2>
@@ -41,10 +41,20 @@
 	        				{% endfor %}
 						</select>
  				</div>
+<<<<<<< HEAD
  			<button type="reset" class="btn btn-primary">Annuler</button>
 			<button type="submit" class="btn btn-primary">Valider</button>			
+=======
+			<span class="right-align">
+				<button type="button" class=" btn btn-success btn-add-materiel" aria-label="Left Align" onclick="ajouterMateriel();">
+				<i class="fa fa-plus"></i>
+				Ajouter
+				</button>
+			</span>
+>>>>>>> 58166f44ce60d04fd9034fd967ee1f749eab8996
 			</form>
     	</div>
   	</section>
+	  <br>
 
 {% include('footer.twig') %}

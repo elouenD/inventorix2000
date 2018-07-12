@@ -1,14 +1,36 @@
 {% include('header.twig') %}
 
-  <br><br><br>
-  <h2>Liste des utilisateurs</h2>
-  <ul class="list-group">
-    {% for user in user %}
+<div class="page">
+    <h2 class="left-align">Liste des utilisateurs</h2>
+    <span class="right-align">
+    <button type="button" class=" btn btn-success btn-add" aria-label="Left Align" onclick="toggleFormAddUtilisateur();">
+        <i class="fa fa-plus"></i>
+        Ajouter Utilisateur
+        </button>
+    </span>
+    <br>
+    <br>
+    <br>
 
-        <li class="list-group-item">{{ user.Id}} - {{ user.Nom}} - {{user.Prenom}}</li>
-    {% endfor %}
-</ul>
-<br><br>
+
+    <ul class="list-group">
+        {% for user in user %}
+            <li class="list-group-item" onclick="toggleUtilisateurDetail({{user.Id}});">{{ user.Id }} - {{ user.Nom }} - {{ user.Prenom }}</li>
+        {% endfor %}
+    </ul>
+</div>
 
 {% include('footer.twig') %}
+
+<script>
+
+    function toggleFormAddUtilisateur(){
+        window.location.href = "utilisateur-create.php";
+    }
+
+    function toggleUtilisateurDetail(id){
+        window.location.href = "utilisateur-detail.php?id="+id;
+    }
+    
+</script>
 

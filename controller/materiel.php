@@ -3,6 +3,7 @@ require_once("include.php");
 include("fonction.php");
 $materielInfo=materielInfo();
 
+
 // Set navigation
 $nav = (object) ['accueil' => false, 'materiel' => true, 'emprunt' => false, 'utilisateur' => false, 'etudiant' => false];
 

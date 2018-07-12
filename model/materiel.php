@@ -1,5 +1,5 @@
 <?php
-class materiel
+class Materiel
 {
     private $id;
     private $codeBarre;

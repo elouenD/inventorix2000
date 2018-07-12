@@ -1,24 +1,8 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% include('header.twig') %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./_lib/bootstrap/css/bootstrap.css">
+  <div class="page">
+    <button type="button" class="btn btn-link"><a href="utilisateur.php">&lt Retour</a></button>
+    <h2> Utilisateur Details {{ id }}</h2>
+  </div>
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Message: {{ name }}!</h1>
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="./_lib/bootstrap/js/bootstrap.min.js" ></script>
-  </body>
-</html>
-
+{% include('footer.twig') %}

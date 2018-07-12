@@ -1,4 +1,8 @@
 <?php
+
+require '../model/materiel.php'; // J'inclus la classe.
+require '../model/pret.php'; // J'inclus la classe.
+require '../model/utilisateur.php'; // J'inclus la classe.
 function dbConnect(){
     $bdd=NULL;
     try
@@ -55,19 +59,17 @@ function userInfospec($id)
     return $dataUserSpec;
 }
 
-//Affiche les infos d'un utilisateurs 
-
-function userInfoPrint($dataUser)
-{
-    //affichage du tableau 
-    print_r($dataUser);
-
-}
-
 
 //
-function createUser($nom,$prenom,$mail,$login,$password){
+function createUser(Utilisateur $user){
     $bdd=NULL;
+    
+    $nom= $user->getNom();
+    $prenom=$user->getPrenom();
+    $mail=$user->getMail();
+    $login=$user->getLogin();
+    $password=$user->getPassword();
+
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
     $newUser = $bdd->prepare("INSERT INTO `utilisateur` ( `Nom`, `Prenom`, `Mail`, `Login`, `Password`) VALUES ( ?, ?, ?, ?, ?);");
@@ -123,14 +125,18 @@ function getID($login,$password){
     return $id;
 }
 
+function echoMat(Materiel $materiel){
+    $coucou = $materiel->getID();
+    echo $coucou;
+}
+
 function coucou(){
     echo 'coucou!';
 }
 
 //Emprunt 
 
-function empruntInfo()
-{
+function empruntInfo(){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
@@ -142,6 +148,26 @@ function empruntInfo()
     return $dataPret;
 }
 
+function checkEmprunt($dateSouhaite,$idMateriel){
+    //permet de vérifier si un Materiel est dispo
+
+    $bdd=NULL;
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
+
+    $statement = $bdd->prepare("SELECT * FROM pret where DateRendu <=? and Materiel_id= ?");
+    $statement->execute(array($dateSouhaite, $idMateriel));
+    $count = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $count= count($count);
+    if(count==0){
+        return true;
+    }
+    else{
+        return false;
+    }
+    
+}
+
 function updateEmprunt($idPret,$dateRendu){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
@@ -150,12 +176,24 @@ function updateEmprunt($idPret,$dateRendu){
     $updatePret->execute(array($dateRendu,$idPret));
 }
 //Améliorer avec des objets directement
-function createEmprunt($dateDebut,$dateFinPrevu,$dateRendu,$idMateriel,$idUser){
+function createEmprunt(Pret $pret){
     $bdd=NULL;
-    //appel de dbConnect pour instancier une connexion à la base de donnée
-    $bdd=dbConnect();
-    $newPret = $bdd->prepare("INSERT INTO `pret` (`DateDebut`, `DateFinPrevu`, `DateRendu`, `Utilisateur_Id`, `Materiel_id`) VALUES ( ?, ?, ?, ?, ?);");
-    $newPret->execute(array($dateDebut,$dateFinPrevu,$dateRendu,$idUser,$idMateriel));
+
+    $dateDebut= $pret->getDateDebut(); 
+    $dateFinPrevu=$pret->getDateFinPrevu(); 
+    $dateRendu=NULL;
+    $idMateriel=$pret->getMaterielId();
+    $idUser=$pret->getUtilisateurId();
+    if(checkEmprunt($dateDebut,$idMateriel)==true){
+        //appel de dbConnect pour instancier une connexion à la base de donnée
+        $bdd=dbConnect();
+        $newPret = $bdd->prepare("INSERT INTO `pret` (`DateDebut`, `DateFinPrevu`, `DateRendu`, `Utilisateur_Id`, `Materiel_id`) VALUES ( ?, ?, ?, ?, ?);");
+        $newPret->execute(array($dateDebut,$dateFinPrevu,$dateRendu,$idUser,$idMateriel));
+        return true; 
+    }else{
+        return false; 
+    }
+
 }
 
 
@@ -186,8 +224,15 @@ function updateMateriel($){
     $updateMateriel->execute(array());    
 }*/
 //Améliorer avec des objets directement
-function createMateriel($codeBarre,$nom,$description,$dateAchat,$prixAchat,$fournisseurId){
+
+function createMateriel(Materiel $mat){
     $bdd=NULL;
+    $codeBarre=$mat->getCodeBarre();
+    $nom=$mat->getNom();
+    $description=$mat->getDescription();
+    $dateAchat=$mat->getDateAchat();
+    $prixAchat=$mat->getPrixAchat();
+    $fournisseurId=$mat->getFournisseur();
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
     $newMateriel = $bdd->prepare("INSERT INTO `materiel` (`CodeBarre`, `Nom`, `Description`, `DateAchat`, `PrixAchat`,`Fournisseur_Id`) VALUES ( ?, ?, ?, ?, ?, ?);");
@@ -314,8 +359,7 @@ function findMaterielbyCB($cb_find){
 
 function main(){
     
-
-   $users=userInfo();
+        
   
 }
 

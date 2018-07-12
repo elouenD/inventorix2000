@@ -19,6 +19,7 @@ $materiel = new materiel(
 
 
 
+
 function createMateriel($codeBarre,$nom,$description,$dateAchat,$prixAchat,$fournisseurId){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée

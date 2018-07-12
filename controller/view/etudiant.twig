@@ -1,13 +1,35 @@
 {% include('header.twig') %}
 
-  <br><br><br>
-  <h2>Liste des étudiants</h2>
-  <ul class="list-group">
-    {% for etudiant in etudiant %}
+<div class="page">
+    <h2 class="left-align">Liste des étudiants</h2>
+    <span class="right-align">
+    <button type="button" class=" btn btn-success btn-add" aria-label="Left Align" onclick="toggleFormAddEtudiant();">
+        <i class="fa fa-plus"></i>
+        Ajouter Etudiant
+        </button>
+    </span>
+    <br>
+    <br>
+    <br>
 
-        <li class="list-group-item">{{ etudiant.Id}} - {{ etudiant.Nom}} - {{etudiant.Prenom}}</li>
-    {% endfor %}
-</ul>
-<br><br>
+
+    <ul class="list-group">
+        {% for etudiant in etudiant %}
+            <li class="list-group-item" onclick="toggleEtudiantDetail({{etudiant.Id}});">{{ etudiant.Id }} - {{ etudiant.Nom }} - {{ etudiant.Prenom }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
 {% include('footer.twig') %}
 
+<script>
+
+    function toggleFormAddEtudiant(){
+        window.location.href = "etudiant-create.php";
+    }
+
+    function toggleEtudiantDetail(id){
+        window.location.href = "etudiant-detail.php?id="+id;
+    }
+
+</script>

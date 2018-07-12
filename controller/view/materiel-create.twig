@@ -8,40 +8,41 @@
        			Formulaire d'ajout de materiel
       		</h2>
 			<br> 
-      		<form>
+      		<form action="/confirmation.php" method="post">
  				<div class="form-row">
     				<div class="form-group col-md-6">
       					<label for="codeBarre">Code Barre</label>
-      					<input type="number" class="form-control" id="codeBarre" placeholder="Code Barre">
+      					<input type="number" class="form-control" id="codeBarre" placeholder="Code Barre" name="code">
     				</div>
     				<div class="form-group col-md-6">
       					<label for="nomMateriel">Nom</label>
-      					<input type="text" class="form-control" id="nomMateriel" placeholder="Nom">
+      					<input type="text" class="form-control" id="nomMateriel" placeholder="Nom" name="nom"}">
     				</div>
 				</div>
   				<div class="form-group">
     				<label for="description">Description</label>
-    				<input type="text" class="form-control" id="description" placeholder="Description">
+    				<input type="text" class="form-control" id="description" placeholder="Description" name="description">
  				</div>
   				<div class="form-row">
     				<div class="form-group col-md-4">
       					<label for="dateAchat">Date d'achat</label>
-      					<input type="date" class="form-control" id="dateAchat">
+      					<input type="date" class="form-control" id="dateAchat" name="dateAchat">
     				</div>
     				<div class="form-group col-md-4">
       					<label for="prixAchat">Prix d'achat</label>
-      					<input type="number" class="form-control" id="prixAchat" placeholder="Prix d'achat">
+      					<input type="number" class="form-control" id="prixAchat" placeholder="Prix d'achat" name="prixAchat">
     				</div>
   				</div>
   				<div class="form-group">
     				<label for="fournisseur">Fournisseur</label>
     				    <select id="inputState" class="form-control">
     				    	{% for fournisseur in fournisseur %}    				    	
-	        					<option>{{ fournisseur.Nom }}</option>
+	        					<option value="{{materiel.Fournisseur_Id}}">{{ fournisseur.Nom }}</option>
 	        				{% endfor %}
 						</select>
  				</div>
-			<button type="submit" class="btn btn-primary">Valider</button>
+ 			<button type="reset" class="btn btn-primary">Annuler</button>
+			<button type="submit" class="btn btn-primary">Valider</button>			
 			</form>
     	</div>
   	</section>

@@ -8,7 +8,7 @@
        			Formulaire d'ajout de materiel
       		</h2>
 			<br> 
-      		<form action="/confirmation.php" method="post">
+      		<form >
  				<div class="form-row">
     				<div class="form-group col-md-6">
       					<label for="codeBarre">Code Barre</label>
@@ -16,7 +16,7 @@
     				</div>
     				<div class="form-group col-md-6">
       					<label for="nomMateriel">Nom</label>
-      					<input type="text" class="form-control" id="nomMateriel" placeholder="Nom" name="nom"}">
+      					<input type="text" class="form-control" id="nomMateriel" placeholder="Nom" name="nom">
     				</div>
 				</div>
   				<div class="form-group">
@@ -41,20 +41,22 @@
 	        				{% endfor %}
 						</select>
  				</div>
-<<<<<<< HEAD
- 			<button type="reset" class="btn btn-primary">Annuler</button>
-			<button type="submit" class="btn btn-primary">Valider</button>			
-=======
 			<span class="right-align">
 				<button type="button" class=" btn btn-success btn-add-materiel" aria-label="Left Align" onclick="ajouterMateriel();">
 				<i class="fa fa-plus"></i>
 				Ajouter
 				</button>
 			</span>
->>>>>>> 58166f44ce60d04fd9034fd967ee1f749eab8996
 			</form>
     	</div>
   	</section>
 	  <br>
 
 {% include('footer.twig') %}
+<script>
+function ajouterMateriel()
+        {
+            var nomMateriel = document.getElementById("nomMateriel").value;
+            alert(nomMateriel );
+        }      
+</script>

@@ -3,6 +3,26 @@
   <div class="page">
     <button type="button" class="btn btn-link"><a href="materiel.php">&lt Retour</a></button>
     <h2> Materiel Details {{ id }}</h2>
+    
+    <ul class="list-group">
+     
+    <li class="list-group-item" >ID :{{ spec.Id }}</li>
+    <li class="list-group-item" >NOM : {{ spec.Nom }}</li>
+    <li class="list-group-item">CodeBarre : {{spec.CodeBarre}}</li>
+    <li class="list-group-item" >Description : {{ spec.Description }}</li>
+    <li class="list-group-item" >DateAchat : {{ spec.DateAchat }}</li>
+  </ul>
+    <button type="button" class="btn btn-primary">Primary</button>
   </div>
 
 {% include('footer.twig') %}
+
+<script>
+
+ 
+
+  function toggleEmprunt( spec.Id ){
+    window.location.href = "materiel-detail.php?id="+id;
+  }
+
+</script>

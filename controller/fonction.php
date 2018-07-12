@@ -215,6 +215,19 @@ function materielInfo()
     $bdd=NULL;
     return $dataMateriel;
 }
+
+function materielInfoSpec($id)
+{
+    $bdd=NULL;
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
+
+    $statement = $bdd->prepare("SELECT * FROM `materiel` where Id=?");
+    $statement->execute(array($id));
+    $dataMateriel = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $bdd=NULL;
+    return $dataMateriel;
+}
 /*
 function updateMateriel($){
     $bdd=NULL;

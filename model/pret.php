@@ -1,5 +1,5 @@
 <?php
-class pret{
+class Pret{
     private $id;
     private $dateDebut;
     private $dateFinPrevu;

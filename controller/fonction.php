@@ -1,4 +1,7 @@
 <?php
+
+require '../model/materiel.php'; // J'inclus la classe.
+
 function dbConnect(){
     $bdd=NULL;
     try
@@ -123,6 +126,11 @@ function getID($login,$password){
     return $id;
 }
 
+function echoMat(Materiel $materiel){
+    $coucou = $materiel->getID();
+    echo $coucou;
+}
+
 function coucou(){
     echo 'coucou!';
 }
@@ -186,8 +194,15 @@ function updateMateriel($){
     $updateMateriel->execute(array());    
 }*/
 //Améliorer avec des objets directement
-function createMateriel($codeBarre,$nom,$description,$dateAchat,$prixAchat,$fournisseurId){
+
+function createMateriel(Materiel $mat){
     $bdd=NULL;
+    $codeBarre=$mat->getCodeBarre();
+    $nom=$mat->getNom();
+    $description=$mat->getDescription();
+    $dateAchat=$mat->getDateAchat();
+    $prixAchat=$mat->getPrixAchat();
+    $fournisseurId=$mat->getFournisseur();
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
     $newMateriel = $bdd->prepare("INSERT INTO `materiel` (`CodeBarre`, `Nom`, `Description`, `DateAchat`, `PrixAchat`,`Fournisseur_Id`) VALUES ( ?, ?, ?, ?, ?, ?);");
@@ -314,8 +329,9 @@ function findMaterielbyCB($cb_find){
 
 function main(){
     
-
-   $users=userInfo();
+     $perso = new Materiel('Victor','Victor','Victor','Victor','Victor','Victor','Victor','Victor','Victor');        
+       echoMat($perso); 
+        
   
 }
 

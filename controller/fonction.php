@@ -359,8 +359,6 @@ function findMaterielbyCB($cb_find){
 
 function main(){
     
-     $perso = new Materiel('Victor','Victor','Victor','Victor','Victor','Victor','Victor','Victor','Victor');        
-       echoMat($perso); 
         
   
 }

@@ -311,7 +311,7 @@ function statsMaterielDispo(){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $statement = $bdd->prepare("SELECT count(*) FROM `materiel` WHERE DELETED=0 AND `DateDebut` is not NULL");
+    $statement = $bdd->prepare("SELECT count(*) FROM `materiel` WHERE DELETED=0 ");
     $statement->execute();
     $statMateriel = $statement->fetch();
     $statMateriel=$statMateriel[0];

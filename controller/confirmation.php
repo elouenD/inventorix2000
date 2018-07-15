@@ -3,10 +3,10 @@ require_once("include.php");
 include("fonction.php");
 
 
-/*
+
 $materiel = new materiel(
     '',
-    $_POST["codeBarre"],
+    $_POST["code"],
     $_POST["nom"],
     $_POST["description"],
     $_POST["dateAchat"],
@@ -17,6 +17,9 @@ $materiel = new materiel(
 
 
 
+
+print_r( $materiel);
+/*
 
 
 

@@ -8,7 +8,6 @@ class Materiel
     private $dateAchat;
     private $prixAchat;
     private $deleted;
-    private $fournisseur;
     private $fournisseurId;
 
     /**
@@ -20,10 +19,9 @@ class Materiel
      * @param $dateAchat
      * @param $prixAchat
      * @param $deleted
-     * @param $fournisseur
      * @param $fournisseurId
      */
-    public function __construct($id, $codeBarre, $nom, $description, $dateAchat, $prixAchat, $deleted, $fournisseur, $fournisseurId)
+    public function __construct($id, $codeBarre, $nom, $description, $dateAchat, $prixAchat, $deleted, $fournisseurId)
     {
         $this->id = $id;
         $this->codeBarre = $codeBarre;
@@ -32,7 +30,6 @@ class Materiel
         $this->dateAchat = $dateAchat;
         $this->prixAchat = $prixAchat;
         $this->deleted = $deleted;
-        $this->fournisseur = $fournisseur;
         $this->fournisseurId = $fournisseurId;
     }
 
@@ -110,13 +107,7 @@ class Materiel
         return $this->deleted;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getFournisseur()
-    {
-        return $this->fournisseur;
-    }
+   
 
 
 

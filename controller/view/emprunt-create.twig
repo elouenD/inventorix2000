@@ -2,32 +2,58 @@
 <?php include('../fonction.php');?>
 <br><br><br>
 
+<div class="container">
+      		<button type="button" class="btn btn-link"><a href="materiel.php">&lt Retour</a></button>
+      		<h2>
+       			Formulaire d'ajout de materiel
+      		</h2>
+			<br> 
+      		<form  action ='' method='post'>
+ 				<div class="form-row">
+    				<div class="form-group col-md-6">
+      					<label for="codeBarre">Code Barre</label>
+      					<input type="number" class="form-control" id="codeBarre" placeholder="Code Barre" name="code">
+    				</div>
+    				<div class="form-group col-md-6">
+      					<label for="nomMateriel">Nom</label>
+      					<input type="text" class="form-control" id="nomMateriel" placeholder="Nom" name="nom">
+    				</div>
+				</div>
+  				<div class="form-group">
+    				<label for="description">Description</label>
+    				<input type="text" class="form-control" id="description" placeholder="Description" name="description">
+ 				</div>
+  				<div class="form-row">
+    				<div class="form-group col-md-4">
+      					<label for="dateAchat">Date d'achat</label>
+      					<input type="date" class="form-control" id="dateAchat" name="dateAchat">
+    				</div>
+    				<div class="form-group col-md-4">
+      					<label for="prixAchat">Prix d'achat</label>
+      					<input type="number" class="form-control" id="prixAchat" placeholder="Prix d'achat" name="prixAchat">
+    				</div>
+  				</div>
+  				<div class="form-group">
+    				<label for="fournisseur">Fournisseur</label>
+    				    <select id="inputState" name='fournisseur' class="form-control" >
+    				    	{% for fournisseur in fournisseur %}    				    	
+	        					<option value="{{fournisseur.Id}}">{{ fournisseur.Nom }}</option>
+	        				{% endfor %}
+						</select>
+ 				</div>
+				 <!--
+			<span class="right-align">
+				<button type="button" class=" btn btn-success btn-add-materiel" aria-label="Left Align" onclick="ajouterMateriel();">
+				<i class="fa fa-plus"></i>
+				Ajouter
+				</button>
+			</span>
+			-->
+			<input type='submit' value= 'OK'/>
+			</form>
+    	</div>
 
 
-<!--<table border=1 align=center>
-   <caption align='center'>Historique Emprunt</caption>
 
-   <tr>
-       <th align=center>ID Emprunt</th>
-       <th align=center>Date de Debut</th>
-       <th align=center>Date de Fin Prevu</th>
-       <th align=center>Date de Rendu</th>
-       <th align=center>ID Utilisateur </th>
-       <th align=center>ID Materiel</th>
-   </tr>
-    {% for emprunt in emprunt %}
-        <tr>
-            <td align=center>{{ emprunt.Id }}</td>
-            <td align=center>{{emprunt.DateDebut}}</td>
-            <td align=center>{{emprunt.DateFinPrevu}}</td>
-            <td align=center>{{emprunt.DateRendu}}</td>
-            <td align=center>{{emprunt.Utilisateur_Id}}</td>
-            <td align=center>{{emprunt.Materiel_id}}</td>
-        </tr>     
-    {% endfor %}
-</table>
--->
-<H1>FORMULAIRE CREATION EMPRUNT A FAIRE ICI </H1>
-{{idMat}}
 
 {% include('footer.twig') %}

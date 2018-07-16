@@ -2,18 +2,6 @@
 require_once("include.php");
 require('fonction.php');
 
-// Set navigation
-$nav = (object) ['accueil' => false, 'materiel' => true, 'emprunt' => false, 'utilisateur' => false, 'etudiant' => false];
-
-if(isset($_GET['idToDelete'])){
-    $idToDelete = $_GET['idToDelete'];
-    deleteMateriel($idToDelete);
-}else if(isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $materielSpec = materielInfoSpec($id);
-}
-
-
 if(isset($_SESSION['id'])){
     // Set navigation
     $nav = (object) ['accueil' => false, 'materiel' => true, 'emprunt' => false, 'utilisateur' => false, 'etudiant' => false];

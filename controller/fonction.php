@@ -7,7 +7,7 @@ function dbConnect(){
     $bdd=NULL;
     try
     {
-        $bdd = new PDO('mysql:host=localhost;dbname=base_php;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=localhost;dbname=base_php;charset=utf8', 'root', 'root');
         
     }
     catch (Exception $e)
@@ -387,6 +387,15 @@ function findMaterielbyCB($cb_find){
     $findCB = $findCB->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;
     return $findCB;
+}
+
+function updateUser($id,$mail,$login){
+
+    $bdd=NULL;
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
+    $deleteUser = $bdd->prepare("UPDATE utilisateur SET Mail = :mail, Login = :login  WHERE utilisateur.`Id` = :id");
+    $deleteUser->execute(array(":id"=>$id,":mail"=>$mail,":login"=>$login));
 }
 
 

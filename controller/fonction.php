@@ -72,6 +72,22 @@ function createUser(Utilisateur $user){
 
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
+    $newUser = $bdd->prepare("INSERT INTO `utilisateur` ( `Nom`, `Prenom`, `Mail`, `Login`, `Password`, `Responsable`) VALUES ( ?, ?, ?, ?, ?, 1);");
+    $newUser->execute(array($nom,$prenom,$mail,$login,$password));
+}
+
+//
+function createEtudiant(Utilisateur $user){
+    $bdd=NULL;
+
+    $nom= $user->getNom();
+    $prenom=$user->getPrenom();
+    $mail=$user->getMail();
+    $login=$user->getLogin();
+    $password=$user->getPassword();
+
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
     $newUser = $bdd->prepare("INSERT INTO `utilisateur` ( `Nom`, `Prenom`, `Mail`, `Login`, `Password`) VALUES ( :nom, :prenom, :mail, :login, :password);");
     $newUser->execute(array(":nom"=>$nom,":prenom"=>$prenom,":mail"=>$mail,":login"=>$login,":password"=>$password));
 }
@@ -245,14 +261,11 @@ function createMateriel(Materiel $mat){
     $description=$mat->getDescription();
     $dateAchat=$mat->getDateAchat();
     $prixAchat=$mat->getPrixAchat();
-    $fournisseurId=$mat->getFournisseurId();
-
-    
+    $fournisseurId=$mat->getFournisseur();
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $newMateriel = $bdd->prepare("INSERT INTO materiel (CodeBarre, Nom, Description, DateAchat, PrixAchat,Fournisseur_Id) VALUES ( :cb, :nom, :descr, :dated,:prix, :four);");    
-    $newMateriel->execute(array(":cb"=>$codeBarre,":nom"=>$nom,":descr"=>$description,":dated"=>$dateAchat,":prix"=>$prixAchat,":four"=>$fournisseurId));
-
+    $newMateriel = $bdd->prepare("INSERT INTO `materiel` (`CodeBarre`, `Nom`, `Description`, `DateAchat`, `PrixAchat`,`Fournisseur_Id`) VALUES ( ?, ?, ?, ?, ?, ?);");
+    $newMateriel->execute(array($codeBarre,$nom,$description,$dateAchat,$prixAchat,$fournisseurId));
 }
 
 function deleteMateriel($idMateriel){

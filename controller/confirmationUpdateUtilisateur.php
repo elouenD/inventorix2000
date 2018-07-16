@@ -15,4 +15,8 @@ else{
     echo '<a href="index.php">Vous n etes pas connecte(e)</a>';
     $urlprofil="index.php";
     $session = "Rien";
+
+//insertion en base
+if (isset($_POST["mail"]) && isset($_POST["login"])){
+    updateUser($_POST['id'], $_POST["mail"],$_POST["login"]);
 }

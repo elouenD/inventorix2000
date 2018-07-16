@@ -225,7 +225,7 @@ function materielInfo()
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
 
-    $statement = $bdd->prepare("SELECT * FROM `materiel`");
+    $statement = $bdd->prepare("SELECT * FROM `materiel` where DELETED=0");
     $statement->execute();
     $dataMateriel = $statement->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;
@@ -238,20 +238,20 @@ function materielInfoSpec($id)
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
 
-    $statement = $bdd->prepare("SELECT * FROM `materiel` where Id=?");
+    $statement = $bdd->prepare("SELECT * FROM `materiel` where Id=? and DELETED=1;");
     $statement->execute(array($id));
     $dataMateriel = $statement->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;
     return $dataMateriel;
 }
-/*
-function updateMateriel($){
+
+function updateMateriel($desc,$id){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $updateMateriel = $bdd->prepare("UPDATE `pret` SET `DateRendu` = ? WHERE `pret`.`Id` = ?");
-    $updateMateriel->execute(array());    
-}*/
+    $updateMateriel = $bdd->prepare("UPDATE `materiel` SET `Description` =:descr WHERE `materiel`.`Id` = :id");
+    $updateMateriel->execute(array(":descr"=>$desc, ":id"=>$id));    
+}
 //Améliorer avec des objets directement
 
 function createMateriel(Materiel $mat){

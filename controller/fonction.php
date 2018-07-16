@@ -72,8 +72,8 @@ function createUser(Utilisateur $user){
 
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $newUser = $bdd->prepare("INSERT INTO `utilisateur` ( `Nom`, `Prenom`, `Mail`, `Login`, `Password`) VALUES ( ?, ?, ?, ?, ?);");
-    $newUser->execute(array($nom,$prenom,$mail,$login,$password));
+    $newUser = $bdd->prepare("INSERT INTO `utilisateur` ( `Nom`, `Prenom`, `Mail`, `Login`, `Password`) VALUES ( :nom, :prenom, :mail, :login, :password);");
+    $newUser->execute(array(":nom"=>$nom,":prenom"=>$prenom,":mail"=>$mail,":login"=>$login,":password"=>$password));
 }
 
 function updateUserAccess($id,$responsable){

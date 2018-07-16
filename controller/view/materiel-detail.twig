@@ -20,6 +20,10 @@
                 <i class="fa fa-trash"></i>
               supprimer
           </button>
+          <button type="button" class=" btn btn-success btn-add-materiel" data-toggle="modal" data-target="#updateMaterielModal">
+                <i class="fa fa-edit"></i>
+              Modifier
+          </button>
       </span>
     </ul>
 
@@ -42,6 +46,33 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="updateMaterielModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modification</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                     <form method='post' action = 'confirmationUpdateMateriel.php'>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="codeBarre"> Description</label>
+                                <input type="text" class="form-control" id="description" placeholder="description" name="description"/>
+                                <input type='text' readonly="readonly" value="{{spec.Id}}" id="updateDesc" name="updateDesc"/>
+                            </div>
+                            </div>
+                </div>
+                <div class="modal-footer">
+                        <input type='submit' value= 'Modifier'/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% include('footer.twig') %}
@@ -55,4 +86,5 @@
         console.log(idToDelete);
         window.location.href = "materiel-detail.php?id="+idToDelete;
     }
+
 </script>

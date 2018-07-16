@@ -7,31 +7,40 @@
 
         <section>
             Resultat par Code Barre 
-        
-            <ul>
-                    {% for codeBarre in codeBarre %}
-                        <li class="list-group-item" onclick="toggleMaterielDetail({{codeBarre.Id}});" >{{ codeBarre.Nom }} - {{ codeBarre.Description }} - {{ codeBarre.PrixAchat }}</li>
-                    {% endfor %}
-            </ul>
-
+            {% if codeBarre[0].Nom =='Aucun Resultat' %}
+                <p>{{codeBarre[0].Nom}}</p>
+            {% else %}
+                <ul>    
+                        {% for codeBarre in codeBarre %}
+                            <li class="list-group-item" onclick="toggleMaterielDetail({{codeBarre.Id}});" >{{ codeBarre.Nom }} - {{ codeBarre.Description }} - {{ codeBarre.PrixAchat }}</li>
+                        {% endfor %}
+                </ul>
+            {% endif %}
         </section>
 
         <section>
             Resultat par Description 
-                
-                <ul>
-                {% for description in description %}
-                    <li class="list-group-item" onclick="toggleMaterielDetail({{description.Id}});" >{{ description.Nom }} - {{ description.Description }} - {{ description.PrixAchat }}</li>
-                {% endfor %}
-                </ul>
+                {% if description[0].Nom =='Aucun Resultat' %}
+                    <p>{{description[0].Nom}}</p>
+                {% else %}
+                    <ul>
+                    {% for description in description %}
+                        <li class="list-group-item" onclick="toggleMaterielDetail({{description.Id}});" >{{ description.Nom }} - {{ description.Description }} - {{ description.PrixAchat }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}    
         </section>
 
         <section>Resultat par Nom 
-        <ul>
+        {% if nom[0].Nom =='Aucun Resultat' %}
+            <p>{{nom[0].Nom}}</p>
+        {% else %}    
+            <ul>
                 {% for nom in nom %}
                     <li class="list-group-item" onclick="toggleMaterielDetail({{nom.Id}});" >{{ nom.Nom }} - {{ nom.Description }} - {{ nom.PrixAchat }}</li>
                 {% endfor %}
-                </ul>
+            </ul>
+        {% endif %}    
         </section>
     </div>
 </section>

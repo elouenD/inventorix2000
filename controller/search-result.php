@@ -10,21 +10,21 @@ $nav = (object) ['accueil' => false, 'materiel' => false, 'emprunt' => false, 'u
 if(isset ($_POST['code']) and ($_POST['code']!='')){
     $code = findMaterielbyCB($_POST['code']);
 }else{
-    $code[0] = 'Aucun Resultat';
+    $code[0]['Nom'] = 'Aucun Resultat';
 }
 
 
 if(isset ($_POST['description']) and ($_POST['description']!='')){
     $desc = findMaterielbyDescription($_POST['description']);
 }else{
-    $desc[0] = 'Aucun Resultat';
+    $desc[0]['Nom'] = 'Aucun Resultat';
 }
 
 
 if(isset ($_POST['nom']) and ($_POST['nom']!='')){
     $nom =  findMaterielbyName($_POST['nom']) ;
 }else{
-    $nom[0] = 'Aucun Resultat';
+    $nom[0]['Nom'] = 'Aucun Resultat';
 }
 
 

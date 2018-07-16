@@ -72,8 +72,24 @@ function createUser(Utilisateur $user){
 
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $newUser = $bdd->prepare("INSERT INTO `utilisateur` ( `Nom`, `Prenom`, `Mail`, `Login`, `Password`) VALUES ( ?, ?, ?, ?, ?);");
+    $newUser = $bdd->prepare("INSERT INTO `utilisateur` ( `Nom`, `Prenom`, `Mail`, `Login`, `Password`, `Responsable`) VALUES ( ?, ?, ?, ?, ?, 1);");
     $newUser->execute(array($nom,$prenom,$mail,$login,$password));
+}
+
+//
+function createEtudiant(Utilisateur $user){
+    $bdd=NULL;
+
+    $nom= $user->getNom();
+    $prenom=$user->getPrenom();
+    $mail=$user->getMail();
+    $login=$user->getLogin();
+    $password=$user->getPassword();
+
+    //appel de dbConnect pour instancier une connexion à la base de donnée
+    $bdd=dbConnect();
+    $newUser = $bdd->prepare("INSERT INTO `utilisateur` ( `Nom`, `Prenom`, `Mail`, `Login`, `Password`) VALUES ( :nom, :prenom, :mail, :login, :password);");
+    $newUser->execute(array(":nom"=>$nom,":prenom"=>$prenom,":mail"=>$mail,":login"=>$login,":password"=>$password));
 }
 
 function updateUserAccess($id,$responsable){
@@ -339,10 +355,11 @@ function findMaterielbyDescription($description_find){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $findDesc = $bdd->prepare("SELECT * FROM `materiel` WHERE DESCRIPTION LIKE '%?%'");
-    $findDesc->execute(array($description_find));    
+    $findDesc = $bdd->prepare("SELECT * FROM `materiel` WHERE Description LIKE :descr ");
+    $findDesc->execute(array(":descr" =>'%' .$description_find. '%')); 
     $findDesc = $findDesc->fetchAll(PDO::FETCH_ASSOC);
-    $bdd=NULL;
+    $bdd=NULL;  
+    
     return $findDesc;
 }
 //recherche par NOM 
@@ -350,10 +367,11 @@ function findMaterielbyName($name_find){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $findName = $bdd->prepare("SELECT * FROM `materiel` WHERE NAME LIKE '%?%'");
-    $findName->execute(array($name_find));    
-    $findName = $findDesc->fetchAll(PDO::FETCH_ASSOC);
+    $findName = $bdd->prepare("SELECT * FROM `materiel` WHERE Nom LIKE :nom ");
+    $findName->execute(array(":nom"=>'%' .$name_find. '%'));    
+    $findName = $findName->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;
+    
     return $findName;
 
 }

@@ -1,8 +1,50 @@
 {% include('header.twig') %}
-
-  <div class="page">
+<section class="py-5">
+  <div class="container">
     <button type="button" class="btn btn-link"><a href="etudiant.php">&lt Retour</a></button>
-    <h2> Etudiant Create</h2>
+    <h2>
+      Formulaire d'ajout de d'utilisateur
+    </h2>
+    <br>
+    <form  action ='confirmationEtudiant.php'  method='post'>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nomUtilisateur">Nom</label>
+          <input type="text" class="form-control" id="codeBarre" placeholder="Nom" name="nom">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="prenomEtudiant">Prenom</label>
+          <input type="text" class="form-control" id="prenomEtudiant" placeholder="Nom" name="prenom">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="mailEtudiant">Mail</label>
+          <input type="email" class="form-control" id="mailEtudiant" placeholder="exemple: toto@gmail.com" name="mail">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="loginEtudiant">Login</label>
+          <input type="text" class="form-control" id="loginEtudiant" placeholder="login" name="login">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="mdp">Mot de Passe</label>
+          <input type="password" class="form-control" id="mailEtudiant" placeholder="entrer un mot de passe" name="mdp">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="mdpConfirmation">confirmation mot de passe</label>
+          <input type="password" class="form-control" id="mdpConfirmation" placeholder="repetez le mot de passe" name="mdpConfirmation">
+        </div>
+      </div>
+
+      <input type='submit' value= 'OK'/>
+    </form>
   </div>
+</section>
+
 
 {% include('footer.twig') %}

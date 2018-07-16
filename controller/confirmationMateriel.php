@@ -11,25 +11,20 @@ $materiel = new materiel(
     $_POST["description"],
     $_POST["dateAchat"],
     $_POST["prixAchat"],
-    $_POST["fournisseur"],
-    ''
+    '',
+    $_POST["fournisseur"]
 );
 
 
 
 
 print_r( $materiel);
-/*
 
+<<<<<<< HEAD
+//insertion en base 
+createMateriel($materiel);
 
-
-function createMateriel($codeBarre,$nom,$description,$dateAchat,$prixAchat,$fournisseurId){
-    $bdd=NULL;
-    //appel de dbConnect pour instancier une connexion à la base de donnée
-    $bdd=dbConnect();
-    $newMateriel = $bdd->prepare("INSERT INTO `materiel` (`CodeBarre`, `Nom`, `Description`, `DateAchat`, `PrixAchat`,`Fournisseur_Id`) VALUES ( ?, ?, ?, ?, ?, ?);");
-    $newMateriel->execute(array($codeBarre,$nom,$description,$dateAchat,$prixAchat,$fournisseurId));
-}
-*/
+=======
+>>>>>>> 139db5ab250bc5757080987dea62b6960dbaf9c1
 
 echo $twig->render('confirmationMateriel.twig', ['post' => $_POST]);

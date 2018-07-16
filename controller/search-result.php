@@ -2,6 +2,9 @@
 require_once("include.php");
 include("fonction.php");
 
+// Set navigation
+$nav = (object) ['accueil' => false, 'materiel' => false, 'emprunt' => false, 'utilisateur' => false, 'etudiant' => false, 'search'=>true];
+
 
 //fonction de recherche 
 if(isset ($_POST['code']) and ($_POST['code']!='')){
@@ -24,6 +27,5 @@ if(isset ($_POST['nom']) and ($_POST['nom']!='')){
     $nom[0] = 'Aucun Resultat';
 }
 
-$nom =  findMaterielbyName($_POST['nom']) ;
 
 echo $twig->render('search-result.twig', ['codeBarre'=>$code,'description'=>$desc, 'nom'=>$nom]);

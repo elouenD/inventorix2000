@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a91f2e6-58e0-430a-99c1-0c3485de595a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/controller/view/confirmationUtilisateur.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/confirmationUtilisateur.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/view/confirmationMateriel.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/confirmationMateriel.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="confirmationMateriel.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="confirmationMateriel.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/view/confirmationMateriel.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="22">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -62,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="confirmationUtilisateur.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="confirmationUtilisateur.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/view/confirmationUtilisateur.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="78" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
+            <state relative-caret-position="154">
+              <caret line="7" column="80" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -169,6 +169,7 @@
         <option value="$PROJECT_DIR$/controller/confirmationUtilisateur.php" />
         <option value="$PROJECT_DIR$/controller/fonction.php" />
         <option value="$PROJECT_DIR$/controller/view/confirmationUtilisateur.twig" />
+        <option value="$PROJECT_DIR$/controller/view/confirmationMateriel.twig" />
       </list>
     </option>
   </component>
@@ -309,7 +310,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13963000" />
+    <option name="totallyTimeSpent" value="14327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="2048" height="1156" extended-state="6" />
@@ -736,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/view/confirmationMateriel.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/view/utilisateur-create.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -752,8 +746,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/view/confirmationUtilisateur.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="78" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
+        <state relative-caret-position="154">
+          <caret line="7" column="80" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/view/confirmationMateriel.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>

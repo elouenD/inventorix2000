@@ -1,0 +1,29 @@
+{% include('header.twig') %}
+
+<section class="py-5">
+    <div class="container">
+        <button type="button" class="btn btn-link"><a href="home.php">&lt Home</a></button>
+        <form method='post' action = 'generatorCB.php'>
+            <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="codeBarre"> Nombre de code Barre</label>
+                        <input type="number" class="form-control" id="codeBarre" placeholder="Code Barre" name="code">
+                    </div>
+                </div>
+            <input type='submit' value= 'Générer'/>
+        </form>
+        
+
+
+
+
+        
+    </div>
+</section>
+
+
+
+
+
+
+{% include('footer.twig') %}

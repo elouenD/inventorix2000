@@ -24,4 +24,4 @@ print_r( $materiel);
 createMateriel($materiel);
 
 
-echo $twig->render('confirmationMateriel.twig', ['post' => $_POST]);
+echo $twig->render('confirmationUpdateMateriel.twig', ['post' => $_POST]);

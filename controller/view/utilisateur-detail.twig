@@ -1,43 +1,84 @@
 {% include('header.twig') %}
-  
-  <div class="page">
+
+<div class="page">
     <button type="button" class="btn btn-link"><a href="utilisateur.php">&lt Retour</a></button>
     <h2> Utilisateur Details</h2>
-  <ul class="list-group">
-      <li class="list-group-item" >ID :{{ userInfo.Id }}</li>
-      <li class="list-group-item" >NOM : {{ userInfo.Nom }}</li>
-      <li class="list-group-item">Prenom : {{userInfo.Prenom}}</li>
-      <li class="list-group-item" >Mail : {{ userInfo.Mail }}</li>
-      <li class="list-group-item" >Login : {{ userInfo.Login }}</li>
-      <br />
-      <span class="right-align">
+    <ul class="list-group">
+        <li class="list-group-item" >ID :{{ userInfo.Id }}</li>
+        <li class="list-group-item" >NOM : {{ userInfo.Nom }}</li>
+        <li class="list-group-item">Prenom : {{userInfo.Prenom}}</li>
+        <li class="list-group-item" >Mail : {{ userInfo.Mail }}</li>
+        <li class="list-group-item" >Login : {{ userInfo.Login }}</li>
+        <br />
+        <span class="right-align">
         <button type="button" class=" btn btn-success btn-add-materiel" data-toggle="modal" data-target="#deleteEtudiantModal">
                 <i class="fa fa-trash"></i>
               Supprimer
+        </button>
+        <button type="button" class=" btn btn-success btn-add-materiel" data-toggle="modal" data-target="#updateEtudiantModal">
+                <i class="fa fa-edit"></i>
+              Modifier
           </button>
     </span>
-  </ul>
-      <div class="modal fade" id="deleteEtudiantModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="deleteUtilisateur">Suppression d'un Utilisateur</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-                  <div class="modal-body">
-                      Voulez-vous vraiment supprimer l'utilisateur ?
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
-                      <button type="button" class="btn btn-primary"  onclick="toggleDeleteUtilisateur({{userInfo.Id}});">Oui</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  
+    </ul>
+
+    <div class="modal fade" id="deleteEtudiantModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteUtilisateur">Suppression d'un Utilisateur</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Voulez-vous vraiment supprimer l'utilisateur ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
+                    <button type="button" class="btn btn-primary"  onclick="toggleDeleteUtilisateur({{userInfo.Id}});">Oui</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="updateEtudiantModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateUtilisateur">Modification d'un Utilisateur</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method='post' action = 'confirmationUpdateUtilisateur.php'>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type='text' readonly="readonly" value="{{userInfo.Id}}" id="updateDesc" name="id"/>
+                                <input type='text' readonly="disabled" value="{{userInfo.Nom}}" id="updateDesc" />
+                                <input type='text' readonly="disabled" value="{{userInfo.Prenom}}" id="updateDesc" />
+
+                                <br/>
+                                <label for="mailUtilisateur">Mail</label>
+                                <input type="email" class="form-control" id="description" placeholder="mail" name="mail"/>
+
+                                <label for="nomUtilisateur">Login</label>
+                                <input type="text" class="form-control" id="description" placeholder="login" name="login"/>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <input type='submit' value= 'Modifier'/>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 {% include('footer.twig') %}
 
 <script>

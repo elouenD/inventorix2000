@@ -355,10 +355,11 @@ function findMaterielbyDescription($description_find){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $findDesc = $bdd->prepare("SELECT * FROM `materiel` WHERE DESCRIPTION LIKE '% :desc %'");
-    $findDesc->execute(array(":desc"=>$description_find));    
+    $findDesc = $bdd->prepare("SELECT * FROM `materiel` WHERE Description LIKE :descr ");
+    $findDesc->execute(array(":descr" =>'%' .$description_find. '%')); 
     $findDesc = $findDesc->fetchAll(PDO::FETCH_ASSOC);
-    $bdd=NULL;
+    $bdd=NULL;  
+    
     return $findDesc;
 }
 //recherche par NOM 
@@ -366,10 +367,11 @@ function findMaterielbyName($name_find){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $findName = $bdd->prepare("SELECT * FROM `materiel` WHERE NAME LIKE '% :name %'");
-    $findName->execute(array(":name"=>$name_find));    
+    $findName = $bdd->prepare("SELECT * FROM `materiel` WHERE Nom LIKE :nom ");
+    $findName->execute(array(":nom"=>'%' .$name_find. '%'));    
     $findName = $findName->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;
+    
     return $findName;
 
 }
@@ -378,8 +380,8 @@ function findMaterielbyCB($cb_find){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $findCB = $bdd->prepare("SELECT * FROM `materiel` WHERE CodeBarre = :cb ");
-    $findCB->execute(array(":cb"=>$cb_find));    
+    $findCB = $bdd->prepare("SELECT * FROM `materiel` WHERE CodeBarre = ? ");
+    $findCB->execute(array($cb_find));    
     $findCB = $findCB->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;
     return $findCB;

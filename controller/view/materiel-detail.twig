@@ -1,29 +1,58 @@
 {% include('header.twig') %}
 
-  <div class="page">
+<div class="page">
     <button type="button" class="btn btn-link"><a href="materiel.php">&lt Retour</a></button>
-    <h2> Materiel Details </h2>
-    
+    <h2> Materiel Details {{ id }}</h2>
+
     <ul class="list-group">
-      <li class="list-group-item" >ID :{{ spec.Id }}</li>
-      <li class="list-group-item" >NOM : {{ spec.Nom }}</li>
-      <li class="list-group-item">CodeBarre : {{spec.CodeBarre}}</li>
-      <li class="list-group-item" >Description : {{ spec.Description }}</li>
-      <li class="list-group-item" >DateAchat : {{ spec.DateAchat }}</li>
-      <span class="right-align">
+        <li class="list-group-item" >ID :{{ spec.Id }}</li>
+        <li class="list-group-item" >NOM : {{ spec.Nom }}</li>
+        <li class="list-group-item">CodeBarre : {{spec.CodeBarre}}</li>
+        <li class="list-group-item" >Description : {{ spec.Description }}</li>
+        <li class="list-group-item" >DateAchat : {{ spec.DateAchat }}</li>
+        <br/>
+        <span class="right-align">
 				<button type="button" class=" btn btn-success btn-add-materiel" aria-label="Left Align" onclick="toggleEmprunt({{spec.Id}});">
-					<i class="fa fa-plus"></i>
-					Emprunter
+				<i class="fa fa-plus"></i>
+				Emprunter
 				</button>
-				<input class=btn btn-success btn-add-materiel" aria-label="Left Align" type='submit' value= 'Supprimer'/>
-		  </span>
+          <button type="button" class=" btn btn-success btn-add-materiel" data-toggle="modal" data-target="#deleteMaterielModal">
+                <i class="fa fa-trash"></i>
+              supprimer
+          </button>
+      </span>
     </ul>
-  </div>
+
+    <div class="modal fade" id="deleteMaterielModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Voulez-vous vraiment supprimer le materiel ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
+                    <button type="button" class="btn btn-primary"  onclick="toggleDeleteMateriel({{spec.Id}});">Oui</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% include('footer.twig') %}
 
 <script>
- function toggleEmprunt(idMat){
-    window.location.href = "emprunt-create.php?id="+idMat;
-  }
+    function toggleEmprunt(id){
+        window.location.href = "emprunt-create.php?id="+id;
+    }
+
+    function toggleDeleteMateriel(idToDelete){
+        console.log(idToDelete);
+        window.location.href = "materiel-detail.php?id="+idToDelete;
+    }
 </script>

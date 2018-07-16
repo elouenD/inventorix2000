@@ -7,7 +7,7 @@ function dbConnect(){
     $bdd=NULL;
     try
     {
-        $bdd = new PDO('mysql:host=localhost;dbname=base_php;charset=utf8', 'root', '');
+        $bdd = new PDO('mysql:host=localhost;dbname=base_php;charset=utf8', 'root', 'root');
         
     }
     catch (Exception $e)
@@ -225,7 +225,7 @@ function materielInfo()
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
 
-    $statement = $bdd->prepare("SELECT * FROM `materiel` where DELETED=0");
+    $statement = $bdd->prepare("SELECT * FROM `materiel`WHERE deleted!=1");
     $statement->execute();
     $dataMateriel = $statement->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;
@@ -238,7 +238,7 @@ function materielInfoSpec($id)
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
 
-    $statement = $bdd->prepare("SELECT * FROM `materiel` where Id=? and DELETED=1;");
+    $statement = $bdd->prepare("SELECT * FROM `materiel` where Id=? AND deleted!=1");
     $statement->execute(array($id));
     $dataMateriel = $statement->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;

@@ -72,3 +72,15 @@ body {
 .list-group-item:active{
   background-color: #DDD;
 }
+
+.titreMatNonRendu{
+  text-align: center;
+  font-weight: 600;
+}
+
+.textMatNonRendu{
+  font-size: 180px;
+  text-align: center;
+  color: #da212f;
+}
+

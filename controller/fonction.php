@@ -315,7 +315,7 @@ function statsEmpruntNonRendu(){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $statement = $bdd->prepare("SELECT COUNT(*) FROM `pret` WHERE (`DateRendu`>`DateFinPrevu` or DateRendu is NULL)");
+    $statement = $bdd->prepare("SELECT COUNT(*) FROM `pret` WHERE CURDATE() > `DateFinPrevu` AND DateRendu is NULL");
     $statement->execute();
     $statEmpruntNonRendu = $statement->fetch();
     $statEmpruntNonRendu=$statEmpruntNonRendu[0];

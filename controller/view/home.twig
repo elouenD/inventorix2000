@@ -52,7 +52,8 @@
       </div>
 
       <div class="doughnut-chart-container">
-          <canvas id="doughnut-materiel-a-rendre"></canvas>
+          <h5 class="titreMatNonRendu" >Matériel Non Rendu </h5>
+          <p class="textMatNonRendu" >{{ statsEmpruntNonRendu }} </p>
       </div>
   </div>
 
@@ -76,36 +77,6 @@
             title: {
               display: true,
               text: 'Matériel disponible',
-              fontSize: 18,
-              fontColor: "#111"
-            },
-            legend: {
-                display: true,
-                position: "bottom",
-                labels: {
-                    fontColor: "#333",
-                    fontSize: 16
-                }
-            }
-          }
-      });
-      new Chart(document.getElementById("doughnut-materiel-a-rendre"), {
-          type: 'doughnut',
-          data: {
-            labels: ["Non Rendu", "Bientôt à Rendre"],
-            datasets: [
-              {
-                label: "Matériel à Rendre",
-                backgroundColor: ["#c0392b", "#d35400"],
-                data: [{{ statsEmpruntNonRendu }}, {{ statMaterielRendre }}]
-              }
-            ]
-          },
-          options: {
-            responsive: true,
-            title: {
-              display: true,
-              text: 'Matériel à Rendre',
               fontSize: 18,
               fontColor: "#111"
             },

@@ -1,40 +1,57 @@
 {% include('header.twig') %}
 <?php include('../fonction.php');?>
-<br><br><br>
+<br><br>
+
+<div class="container">
+    <span class="right-align">
+        <button type="button" class=" btn btn-success btn-add" aria-label="Left Align" onclick="toggleForAddEmprunt();">
+          <i class="fa fa-plus"></i>
+          Ajouter emprunt
+        </button>
+            <br>
+            <br>
+        <button type="button" class=" btn btn-success btn-add" aria-label="Left Align" onclick="toggleFormRendreEmprunt();">
+          <i class="fa fa-plus"></i>
+          rendre matériel
+        </button>
+    </span>
+
+    <table border=1 align=center >
+       <caption align='center'>Historique Emprunt</caption>
 
 
+       <tr>
+           <th align=center>ID Emprunt</th>
+           <th align=center>Date de Debut</th>
+           <th align=center>Date de Fin Prevu</th>
+           <th align=center>Date de Rendu</th>
+           <th align=center>ID Utilisateur </th>
+           <th align=center>ID Materiel</th>
+       </tr>
+        {% for emprunt in emprunt %}
+            <tr>
+                <td align=center>{{ emprunt.Id }}</td>
+                <td align=center>{{emprunt.DateDebut}}</td>
+                <td align=center>{{emprunt.DateFinPrevu}}</td>
+                <td align=center>{{emprunt.DateRendu}}</td>
+                <td align=center>{{emprunt.Utilisateur_Id}}</td>
+                <td align=center>{{emprunt.Materiel_id}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
 
-<table border=1 align=center>
-   <caption align='center'>Historique Emprunt</caption>
-
-   <tr>
-       <th align=center>ID Emprunt</th>
-       <th align=center>Date de Debut</th>
-       <th align=center>Date de Fin Prevu</th>
-       <th align=center>Date de Rendu</th>
-       <th align=center>ID Utilisateur </th>
-       <th align=center>ID Materiel</th>
-   </tr>
-    {% for emprunt in emprunt %}
-        <tr>
-            <td align=center>{{ emprunt.Id }}</td>
-            <td align=center>{{emprunt.DateDebut}}</td>
-            <td align=center>{{emprunt.DateFinPrevu}}</td>
-            <td align=center>{{emprunt.DateRendu}}</td>
-            <td align=center>{{emprunt.Utilisateur_Id}}</td>
-            <td align=center>{{emprunt.Materiel_id}}</td>
-        </tr>     
-    {% endfor %}
-</table>
-
-<h3>Partie Créer Emprunt 
-<br>
-Mettre Bouton
-</h3>
-
-<h3>Partie Rendre un Emprunt
-<br>
-Mettre Bouton
-</h3>
 {% include('footer.twig') %}
+
+<script>
+
+    function toggleForAddEmprunt(){
+        window.location.href = "emprunt-create.php";
+    }
+
+    function toggleFormRendreEmprunt(id){
+        window.location.href = "emprunt-rendre.php";
+    }
+
+</script>
 

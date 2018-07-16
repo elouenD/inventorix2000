@@ -2,7 +2,8 @@
 require_once("include.php");
 include('fonction.php');
 
-$empruntInfo=empruntInfo();
+$etudiantInfos=etudiantInfo();
+$materielInfos=materielInfo();
 
 $idMat = $_GET['id'];
 
@@ -11,7 +12,7 @@ $nav = (object) ['accueil' => false, 'materiel' => false, 'emprunt' => true, 'ut
 
 
 
-echo $twig->render('emprunt-create.twig', ['name' => "page emprunt create", 'autre' => "autre chose", 'nav' => $nav, 'emprunt'=> $empruntInfo, 'idMat'=>$idMat]);
+echo $twig->render('emprunt-create.twig', ['name' => "page emprunt create", 'nav' => $nav, 'etudiantInfos'=> $etudiantInfos, 'materielInfos' => $materielInfos]);
 
 
 

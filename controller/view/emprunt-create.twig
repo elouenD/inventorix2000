@@ -3,55 +3,48 @@
 <br><br><br>
 
 <div class="container">
-      		<button type="button" class="btn btn-link"><a href="materiel.php">&lt Retour</a></button>
-      		<h2>
-       			Formulaire d'ajout de materiel
-      		</h2>
-			<br> 
-      		<form  action ='' method='post'>
- 				<div class="form-row">
-    				<div class="form-group col-md-6">
-      					<label for="codeBarre">Code Barre</label>
-      					<input type="number" class="form-control" id="codeBarre" placeholder="Code Barre" name="code">
-    				</div>
-    				<div class="form-group col-md-6">
-      					<label for="nomMateriel">Nom</label>
-      					<input type="text" class="form-control" id="nomMateriel" placeholder="Nom" name="nom">
-    				</div>
-				</div>
-  				<div class="form-group">
-    				<label for="description">Description</label>
-    				<input type="text" class="form-control" id="description" placeholder="Description" name="description">
- 				</div>
-  				<div class="form-row">
-    				<div class="form-group col-md-4">
-      					<label for="dateAchat">Date d'achat</label>
-      					<input type="date" class="form-control" id="dateAchat" name="dateAchat">
-    				</div>
-    				<div class="form-group col-md-4">
-      					<label for="prixAchat">Prix d'achat</label>
-      					<input type="number" class="form-control" id="prixAchat" placeholder="Prix d'achat" name="prixAchat">
-    				</div>
-  				</div>
-  				<div class="form-group">
-    				<label for="fournisseur">Fournisseur</label>
-    				    <select id="inputState" name='fournisseur' class="form-control" >
-    				    	{% for fournisseur in fournisseur %}    				    	
-	        					<option value="{{fournisseur.Id}}">{{ fournisseur.Nom }}</option>
-	        				{% endfor %}
-						</select>
- 				</div>
-				 <!--
-			<span class="right-align">
-				<button type="button" class=" btn btn-success btn-add-materiel" aria-label="Left Align" onclick="ajouterMateriel();">
-				<i class="fa fa-plus"></i>
-				Ajouter
-				</button>
-			</span>
-			-->
-			<input type='submit' value= 'OK'/>
-			</form>
-    	</div>
+	<button type="button" class="btn btn-link"><a href="materiel.php">&lt Retour</a></button>
+	<h2>
+		Formulaire d'emprunt
+	</h2>
+	<br>
+	<form  action ='confirmationEmprunt.php' method='post'>
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<label for="dateDebut">Date de début</label>
+				<input type="date" class="form-control" id="dateDebut" name="dateDebut">
+			</div>
+			<div class="form-group col-md-4">
+				<label for="dateFinPrevu">Date de fin Prevu</label>
+				<input type="date" class="form-control" id="dateFinPrevu" name="dateFinPrevu">
+			</div>
+			<div class="form-group col-md-4">
+				<label for="dateRendu">Date de rendu</label>
+				<input type="date" class="form-control" id="dateRendu" name="dateRendu">
+			</div>
+		</div>
+
+		<div class="form-row">
+			<label for="utilisateurId">Etudiants</label>
+			<select id="inputState" name='utilisateurId' class="form-control" >
+                {% for etudiantInfo in etudiantInfos %}
+					<option value="{{etudiantInfo.Id}}">{{ etudiantInfo.Nom }}</option>
+                {% endfor %}
+			</select>
+			<br><br><br>
+
+			<label for="materielId">Materiels</label>
+			<select id="inputState" name='materielId' class="form-control" >
+                {% for materielInfo in materielInfos %}
+					<option value="{{materielInfo.Id}}">{{ materielInfo.Nom }}</option>
+                {% endfor %}
+			</select>
+			<br><br><br>
+		</div>
+
+		<input type='submit' value= 'OK'/>
+	</form>
+</div>
 
 
 

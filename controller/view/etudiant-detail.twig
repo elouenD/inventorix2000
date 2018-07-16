@@ -1,16 +1,50 @@
 {% include('header.twig') %}
-  
-  <div class="page">
-    <button type="button" class="btn btn-link"><a href="etudiant.php">&lt Retour</a></button>
-    <h2> Etudiant Details </h2>
-    <ul class="list-group">
-      <li class="list-group-item" >ID :{{ userInfo.Id }}</li>
-      <li class="list-group-item" >NOM : {{ userInfo.Nom }}</li>
-      <li class="list-group-item">Prenom : {{userInfo.Prenom}}</li>
-      <li class="list-group-item" >Mail : {{ userInfo.Mail }}</li>
-      <li class="list-group-item" >Login : {{ userInfo.Login }}</li>
-    </ul>    
+
+<div class="page">
+  <button type="button" class="btn btn-link"><a href="etudiant.php">&lt Retour</a></button>
+  <h2> Etudiant Details </h2>
+  <ul class="list-group">
+    <li class="list-group-item" >ID :{{ userInfo.Id }}</li>
+    <li class="list-group-item" >NOM : {{ userInfo.Nom }}</li>
+    <li class="list-group-item">Prenom : {{userInfo.Prenom}}</li>
+    <li class="list-group-item" >Mail : {{ userInfo.Mail }}</li>
+    <li class="list-group-item" >Login : {{ userInfo.Login }}</li>
+    <br />
+    <span class="right-align">
+        <button type="button" class=" btn btn-success btn-add-materiel" data-toggle="modal" data-target="#deleteEtudiantModal">
+                <i class="fa fa-trash"></i>
+              Supprimer
+          </button>
+    </span>
+  </ul>
+
+  <div class="modal fade" id="deleteEtudiantModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteEtudiant">Suppression d'un etudiant</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Voulez-vous vraiment supprimer l'etudiant ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
+          <button type="button" class="btn btn-primary"  onclick="toggleDeleteEtudiant({{userInfo.Id}});">Oui</button>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
 {% include('footer.twig') %}
 
+<script>
+
+
+    function toggleDeleteEtudiant(idToDelete){
+        window.location.href = "etudiant-detail.php?idToDelete="+idToDelete;
+    }
+</script>

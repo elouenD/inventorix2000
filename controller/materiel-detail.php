@@ -6,9 +6,8 @@ $nav = (object) ['accueil' => false, 'materiel' => true, 'emprunt' => false, 'ut
 
 if(isset($_GET['idToDelete'])){
     $idToDelete = $_GET['idToDelete'];
-    echo($idToDelete);
     deleteMateriel($idToDelete);
-} else if(isset($_GET['id'])) {
+}else if(isset($_GET['id'])) {
     $id = $_GET['id'];
     $materielSpec = materielInfoSpec($id);
 }

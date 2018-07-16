@@ -18,7 +18,7 @@
 				</button>
           <button type="button" class=" btn btn-success btn-add-materiel" data-toggle="modal" data-target="#deleteMaterielModal">
                 <i class="fa fa-trash"></i>
-              supprimer
+              Supprimer
           </button>
           <button type="button" class=" btn btn-success btn-add-materiel" data-toggle="modal" data-target="#updateMaterielModal">
                 <i class="fa fa-edit"></i>
@@ -31,7 +31,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="suppressionMateriel">Suppression de materiel</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -83,8 +83,8 @@
     }
 
     function toggleDeleteMateriel(idToDelete){
-        console.log(idToDelete);
-        window.location.href = "materiel-detail.php?id="+idToDelete;
+        alert(idToDelete);
+        window.location.href = "materiel-detail.php?idToDelete="+idToDelete;
     }
 
 </script>

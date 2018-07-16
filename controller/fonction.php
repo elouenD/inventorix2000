@@ -101,6 +101,7 @@ function updateUserAccess($id,$responsable){
 }
 
 function deleteUser($id){
+    echo("ok");
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();

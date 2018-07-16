@@ -18,3 +18,4 @@ else {
 }
 
 echo $twig->render('confirmationConnexion.twig', ['post' => $_POST, 'messageAuth' => $messageAuth, 'page' => $boutonRef, 'bouton' => $boutonNext]);
+

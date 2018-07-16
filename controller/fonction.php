@@ -117,6 +117,7 @@ function connect($login,$password){
         {
             if($allUser[$i]['Password']==$password){
                 $connect=true;
+                $_SESSION['id'] = $allUser[$i]['Id'];
             }
         }
     }

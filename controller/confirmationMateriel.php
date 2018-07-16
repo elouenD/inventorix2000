@@ -20,11 +20,8 @@ $materiel = new materiel(
 
 print_r( $materiel);
 
-<<<<<<< HEAD
 //insertion en base 
 createMateriel($materiel);
 
-=======
->>>>>>> 139db5ab250bc5757080987dea62b6960dbaf9c1
 
 echo $twig->render('confirmationMateriel.twig', ['post' => $_POST]);

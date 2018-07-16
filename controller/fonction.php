@@ -261,7 +261,7 @@ function createMateriel(Materiel $mat){
     $description=$mat->getDescription();
     $dateAchat=$mat->getDateAchat();
     $prixAchat=$mat->getPrixAchat();
-    $fournisseurId=$mat->getFournisseur();
+    $fournisseurId=$mat->getFournisseurId();
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
     $newMateriel = $bdd->prepare("INSERT INTO `materiel` (`CodeBarre`, `Nom`, `Description`, `DateAchat`, `PrixAchat`,`Fournisseur_Id`) VALUES ( ?, ?, ?, ?, ?, ?);");

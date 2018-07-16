@@ -11,8 +11,8 @@ $materiel = new materiel(
     $_POST["description"],
     $_POST["dateAchat"],
     $_POST["prixAchat"],
-    $_POST["fournisseur"],
-    ''
+    '',
+    $_POST["fournisseur"]
 );
 
 

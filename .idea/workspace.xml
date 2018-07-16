@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a91f2e6-58e0-430a-99c1-0c3485de595a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/confirmationMateriel.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/confirmationMateriel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/fonction.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/fonction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/view/materiel-detail.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/materiel-detail.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/view/utilisateur-detail.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/utilisateur-detail.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/confirmationUpdateUtilisateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/confirmationUpdateUtilisateur.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -96,8 +92,8 @@
       <file leaf-file-name="confirmationUpdateUtilisateur.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/confirmationUpdateUtilisateur.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="88">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -132,8 +128,8 @@
       <file leaf-file-name="fonction.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/fonction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="374" column="4" lean-forward="true" selection-start-line="374" selection-start-column="4" selection-end-line="374" selection-end-column="4" />
+            <state relative-caret-position="492">
+              <caret line="390" column="19" selection-start-line="390" selection-start-column="9" selection-end-line="390" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -402,7 +398,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34001000" />
+    <option name="totallyTimeSpent" value="34179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="2048" height="1156" extended-state="6" />
@@ -846,13 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/confirmationMateriel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/view/materiel-detail.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -890,15 +879,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/fonction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="374" column="4" lean-forward="true" selection-start-line="374" selection-start-column="4" selection-end-line="374" selection-end-column="4" />
+        <state relative-caret-position="492">
+          <caret line="390" column="19" selection-start-line="390" selection-start-column="9" selection-end-line="390" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/confirmationMateriel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/confirmationUpdateUtilisateur.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="88">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>

@@ -1,46 +1,50 @@
 {% include('header.twig') %}
-
-  <div class="page">
+<section class="py-5">
+  <div class="container">
     <button type="button" class="btn btn-link"><a href="utilisateur.php">&lt Retour</a></button>
     <h2>
       Formulaire d'ajout de d'utilisateur
     </h2>
     <br>
-    <form  action ='confirmation.php' method='post'>
+    <form  action ='confirmation.php'  method='post'>
+
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="codeBarre">Code Barre</label>
-          <input type="number" class="form-control" id="codeBarre" placeholder="Code Barre" name="code">
+          <label for="nomUtilisateur">Nom</label>
+          <input type="text" class="form-control" id="codeBarre" placeholder="Nom" name="nom">
         </div>
         <div class="form-group col-md-6">
-          <label for="nomMateriel">Nom</label>
-          <input type="text" class="form-control" id="nomMateriel" placeholder="Nom" name="nom">
+          <label for="prenomUtilisateur">Prenom</label>
+          <input type="text" class="form-control" id="prenomUtilisateur" placeholder="Nom" name="prenom">
         </div>
       </div>
-      <div class="form-group">
-        <label for="description">Description</label>
-        <input type="text" class="form-control" id="description" placeholder="Description" name="description">
-      </div>
+
       <div class="form-row">
-        <div class="form-group col-md-4">
-          <label for="dateAchat">Date d'achat</label>
-          <input type="date" class="form-control" id="dateAchat" name="dateAchat">
+        <div class="form-group col-md-6">
+          <label for="mailUtilisateur">Mail</label>
+          <input type="text" class="form-control" id="mailUtilisateur" placeholder="exemple: toto@gmail.com" name="mail">
         </div>
-        <div class="form-group col-md-4">
-          <label for="prixAchat">Prix d'achat</label>
-          <input type="number" class="form-control" id="prixAchat" placeholder="Prix d'achat" name="prixAchat">
+        <div class="form-group col-md-6">
+          <label for="loginUtilisateur">Login</label>
+          <input type="text" class="form-control" id="loginUtilisateur" placeholder="login" name="login">
         </div>
       </div>
-      <div class="form-group">
-        <label for="fournisseur">Fournisseur</label>
-        <select id="inputState" name='fournisseur' class="form-control" >
-            {% for fournisseur in fournisseur %}
-              <option value="{{fournisseur.Id}}">{{ fournisseur.Nom }}</option>
-            {% endfor %}
-        </select>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="mdp">Mot de Passe</label>
+          <input type="password" class="form-control" id="mailUtilisateur" placeholder="entrer un mot de passe" name="mdp">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="mdpConfirmation">confirmation mot de passe</label>
+          <input type="password" class="form-control" id="mdpConfirmation" placeholder="repetez le mot de passe" name="mdpConfirmation">
+        </div>
       </div>
+
       <input type='submit' value= 'OK'/>
     </form>
   </div>
+</section>
+
 
 {% include('footer.twig') %}

@@ -17,27 +17,60 @@
     </span>
 
     <table border=1 align=center >
-       <caption align='center'>Historique Emprunt</caption>
+        <caption align='center'>Historique Emprunt</caption>
 
-
-       <tr>
-           <th align=center>ID Emprunt</th>
-           <th align=center>Date de Debut</th>
-           <th align=center>Date de Fin Prevu</th>
-           <th align=center>Date de Rendu</th>
-           <th align=center>ID Utilisateur </th>
-           <th align=center>ID Materiel</th>
-       </tr>
+        <tr class="table-bordered">
+            <th align=center>ID Emprunt</th>
+            <th align=center>Date de Debut</th>
+            <th align=center>Date de Fin Prevu</th>
+            <th align=center>Date de Rendu</th>
+            <th align=center>ID Utilisateur </th>
+            <th align=center>ID Materiel</th>
+        </tr>
         {% for emprunt in emprunt %}
-            <tr>
-                <td align=center>{{ emprunt.Id }}</td>
+            <tr class="table-bordered" >
+                <td align=center >{{ emprunt.Id }}</td>
                 <td align=center>{{emprunt.DateDebut}}</td>
                 <td align=center>{{emprunt.DateFinPrevu}}</td>
-                <td align=center>{{emprunt.DateRendu}}</td>
+                <td align=center>
+                    {% if emprunt.DateRendu == "" %}
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            rendre
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Voulez-vous vraiment rendre le materiel ?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
+                                        <button type="button" class="btn btn-primary" onclick="toggleRendreEmprunt({{emprunt.Id}});">Oui</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        {{emprunt.DateRendu}}
+                    {% endif %}
+
+                </td>
                 <td align=center>{{emprunt.Utilisateur_Id}}</td>
                 <td align=center>{{emprunt.Materiel_id}}</td>
             </tr>
         {% endfor %}
+
+
+
+
     </table>
 </div>
 
@@ -51,6 +84,10 @@
 
     function toggleFormRendreEmprunt(id){
         window.location.href = "emprunt-rendre.php";
+    }
+
+    function toggleRendreEmprunt(id) {
+        window.location.href = "emprunt.php?id="+id;
     }
 
 </script>

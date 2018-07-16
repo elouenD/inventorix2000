@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a91f2e6-58e0-430a-99c1-0c3485de595a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/emprunt.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/emprunt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/view/emprunt-create.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/emprunt-create.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/fonction.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/fonction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/materiel-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/materiel-detail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/view/emprunt.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/emprunt.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/view/materiel-detail.twig" beforeDir="false" afterPath="$PROJECT_DIR$/controller/view/materiel-detail.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,6 +50,13 @@
         <item name="base_php" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="base_php: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="materiel: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="base_php" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="base_php: schema" type="c314c289:MysqlImplModel$Schema" />
         <item name="pret: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
@@ -59,8 +67,8 @@
       <file leaf-file-name="emprunt.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/view/emprunt.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="85" column="52" lean-forward="true" selection-start-line="85" selection-start-column="52" selection-end-line="85" selection-end-column="52" />
+            <state relative-caret-position="586">
+              <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="52" />
               <folding>
                 <element signature="e#2169#2176#1#HTML" expanded="true" />
               </folding>
@@ -86,6 +94,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="materiel" pinned="false" current-in-tab="false">
+        <entry file="das://d2303b01-ff0c-4c5d-9fab-c8f11fa06ee3/schema/base_php/table/materiel">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="materiel.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/view/materiel.twig">
           <provider selected="true" editor-type-id="text-editor">
@@ -95,27 +112,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="materiel-detail.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/view/materiel-detail.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="586">
+              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+              <folding>
+                <element signature="e#1663#1670#1#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="materiel-detail.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/materiel-detail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="16" selection-start-line="6" selection-end-line="7" />
+            <state relative-caret-position="220">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fonction.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fonction.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/fonction.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="186" column="22" selection-start-line="186" selection-start-column="9" selection-end-line="186" selection-end-column="22" />
+            <state relative-caret-position="183">
+              <caret line="227" column="62" selection-start-line="227" selection-start-column="62" selection-end-line="227" selection-end-column="62" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="materiel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/materiel.php">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="pret.php" pinned="false" current-in-tab="false">
@@ -127,20 +151,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emprunt.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="emprunt.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/emprunt.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="confirmationEmprunt.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/confirmationEmprunt.php">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <caret line="9" selection-start-line="9" selection-end-line="14" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -159,8 +174,10 @@
       <find>confirmation</find>
       <find>Utilisateur</find>
       <find>fournisseur</find>
-      <find>Launch</find>
       <find>empruntInfo</find>
+      <find>Launch</find>
+      <find>rendre</find>
+      <find>delete</find>
     </findStrings>
     <replaceStrings>
       <replace>Etudiant</replace>
@@ -211,9 +228,11 @@
         <option value="$PROJECT_DIR$/controller/confirmationEmprunt.php" />
         <option value="$PROJECT_DIR$/controller/view/etudiant-create.twig" />
         <option value="$PROJECT_DIR$/controller/view/emprunt-create.twig" />
-        <option value="$PROJECT_DIR$/controller/fonction.php" />
         <option value="$PROJECT_DIR$/controller/view/emprunt.twig" />
         <option value="$PROJECT_DIR$/controller/emprunt.php" />
+        <option value="$PROJECT_DIR$/controller/view/materiel-detail.twig" />
+        <option value="$PROJECT_DIR$/controller/materiel-detail.php" />
+        <option value="$PROJECT_DIR$/controller/fonction.php" />
       </list>
     </option>
   </component>
@@ -354,7 +373,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26014000" />
+    <option name="totallyTimeSpent" value="28755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="2048" height="1156" extended-state="6" />
@@ -364,12 +383,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13167939" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13167939" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Database Console" order="8" weight="0.35209924" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15966797" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.07128906" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.20800781" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -401,8 +420,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/etudiant/etudiant.css" />
-    <entry file="file://$PROJECT_DIR$/controller/controller.php" />
     <entry file="file://$PROJECT_DIR$/model/model.php" />
     <entry file="file://$PROJECT_DIR$/controller/cours.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -784,17 +801,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/materiel-detail.php">
+    <entry file="file://$PROJECT_DIR$/controller/view/emprunt.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="16" selection-start-line="6" selection-end-line="7" />
+        <state relative-caret-position="586">
+          <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="52" />
+          <folding>
+            <element signature="e#2169#2176#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://d2303b01-ff0c-4c5d-9fab-c8f11fa06ee3/schema/base_php/table/pret">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/controller/emprunt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" selection-start-line="9" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -805,27 +825,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/view/emprunt.twig">
+    <entry file="file://$PROJECT_DIR$/controller/view/materiel-detail.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="85" column="52" lean-forward="true" selection-start-line="85" selection-start-column="52" selection-end-line="85" selection-end-column="52" />
+        <state relative-caret-position="586">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
           <folding>
-            <element signature="e#2169#2176#1#HTML" expanded="true" />
+            <element signature="e#1663#1670#1#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/materiel-detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://d2303b01-ff0c-4c5d-9fab-c8f11fa06ee3/schema/base_php/table/pret">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://d2303b01-ff0c-4c5d-9fab-c8f11fa06ee3/schema/base_php/table/materiel">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/fonction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="186" column="22" selection-start-line="186" selection-start-column="9" selection-end-line="186" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/emprunt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="183">
+          <caret line="227" column="62" selection-start-line="227" selection-start-column="62" selection-end-line="227" selection-end-column="62" />
         </state>
       </provider>
     </entry>

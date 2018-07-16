@@ -6,30 +6,18 @@ include("fonction.php");
 
 $utilisateur = new utilisateur(
     '',
-    $_POST["code"],
     $_POST["nom"],
-    $_POST["description"],
-    $_POST["dateAchat"],
-    $_POST["prixAchat"],
-    $_POST["fournisseur"],
+    $_POST["prenom"],
+    $_POST["mail"],
+    $_POST["login"],
+    $_POST["mdp"],
     ''
 );
 
-
+createUser($utilisateur);
 
 
 print_r($utilisateur);
-/*
 
 
-
-function createMateriel($codeBarre,$nom,$description,$dateAchat,$prixAchat,$fournisseurId){
-    $bdd=NULL;
-    //appel de dbConnect pour instancier une connexion à la base de donnée
-    $bdd=dbConnect();
-    $newMateriel = $bdd->prepare("INSERT INTO `materiel` (`CodeBarre`, `Nom`, `Description`, `DateAchat`, `PrixAchat`,`Fournisseur_Id`) VALUES ( ?, ?, ?, ?, ?, ?);");
-    $newMateriel->execute(array($codeBarre,$nom,$description,$dateAchat,$prixAchat,$fournisseurId));
-}
-*/
-
-echo $twig->render('confirmationMateriel.twig', ['post' => $_POST]);
+echo $twig->render('confirmationUtilisateur.twig', ['post' => $_POST]);

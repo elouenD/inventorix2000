@@ -32,4 +32,4 @@ function createMateriel($codeBarre,$nom,$description,$dateAchat,$prixAchat,$four
 }
 */
 
-echo $twig->render('confirmation.twig', ['post' => $_POST]);
+echo $twig->render('confirmationMateriel.twig', ['post' => $_POST]);

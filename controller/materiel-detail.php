@@ -14,6 +14,20 @@ if(isset($_GET['idToDelete'])){
 }
 
 
+if(isset($_SESSION['id'])){
+    $id = $_GET['id'];
+    $materielSpec = materielInfoSpec($id);
+    //$supprimer = deleteMateriel($id);
+    $session =  $_SESSION['id'];
+}
+else{
+    echo '<a href="index.php">Vous n êtes pas connecté(e)</a>';
+    $urlprofil="index.php";
+    $session = "Rien";
+}
+
+
+
 
 
 echo $twig->render('materiel-detail.twig', ['id' => $id, 'nav' => $nav, 'spec'=>$materielSpec[0]]);

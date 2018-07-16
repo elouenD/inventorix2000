@@ -7,7 +7,7 @@ function dbConnect(){
     $bdd=NULL;
     try
     {
-        $bdd = new PDO('mysql:host=localhost;dbname=base_php;charset=utf8', 'root', 'root');
+        $bdd = new PDO('mysql:host=localhost;dbname=base_php;charset=utf8', 'root', '');
         
     }
     catch (Exception $e)
@@ -342,8 +342,8 @@ function findMaterielbyDescription($description_find){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $findDesc = $bdd->prepare("SELECT * FROM `materiel` WHERE DESCRIPTION LIKE '%?%'");
-    $findDesc->execute(array($description_find));    
+    $findDesc = $bdd->prepare("SELECT * FROM `materiel` WHERE DESCRIPTION LIKE '% :desc %'");
+    $findDesc->execute(array(":desc"=>$description_find));    
     $findDesc = $findDesc->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;
     return $findDesc;
@@ -353,9 +353,9 @@ function findMaterielbyName($name_find){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $findName = $bdd->prepare("SELECT * FROM `materiel` WHERE NAME LIKE '%?%'");
-    $findName->execute(array($name_find));    
-    $findName = $findDesc->fetchAll(PDO::FETCH_ASSOC);
+    $findName = $bdd->prepare("SELECT * FROM `materiel` WHERE NAME LIKE '% :name %'");
+    $findName->execute(array(":name"=>$name_find));    
+    $findName = $findName->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;
     return $findName;
 
@@ -365,8 +365,8 @@ function findMaterielbyCB($cb_find){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $findCB = $bdd->prepare("SELECT * FROM `materiel` WHERE CodeBarre = ? ");
-    $findCB->execute(array($cb_find));    
+    $findCB = $bdd->prepare("SELECT * FROM `materiel` WHERE CodeBarre = :cb ");
+    $findCB->execute(array(":cb"=>$cb_find));    
     $findCB = $findCB->fetchAll(PDO::FETCH_ASSOC);
     $bdd=NULL;
     return $findCB;

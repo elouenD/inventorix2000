@@ -1,0 +1,37 @@
+{% include('header.twig') %}
+
+<h2> Resultat de la recherche   </h2>
+<br>
+
+<section>
+Resultat par Code Barre 
+ 
+ <ul>
+        {% for codeBarre in codeBarre %}
+            <li class="list-group-item" >{{ codeBarre.Nom }} - {{ codeBarre.Description }} - {{ codeBarre.PrixAchat }}</li>
+        {% endfor %}
+ </ul>
+
+</section>
+
+<section>Resultat par Description 
+        <ul>
+        {% for description in description %}
+            <li class="list-group-item" >{{ description.Nom }} - {{ description.Description }} - {{ description.PrixAchat }}</li>
+        {% endfor %}
+        </ul>
+
+
+</section>
+
+<section>Resultat par Nom 
+ <ul>
+        {% for nom in nom %}
+            <li class="list-group-item" >{{ nom.Nom }} - {{ nom.Description }} - {{ nom.PrixAchat }}</li>
+        {% endfor %}
+        </ul>
+
+</section>
+
+
+{% include('footer.twig') %}

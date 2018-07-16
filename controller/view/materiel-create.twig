@@ -12,25 +12,25 @@
  				<div class="form-row">
     				<div class="form-group col-md-6">
       					<label for="codeBarre">Code Barre</label>
-      					<input type="number" class="form-control" id="codeBarre" placeholder="Code Barre" name="code">
+      					<input type="number" class="form-control" id="codeBarre" placeholder="Code Barre" name="code" required>
     				</div>
     				<div class="form-group col-md-6">
       					<label for="nomMateriel">Nom</label>
-      					<input type="text" class="form-control" id="nomMateriel" placeholder="Nom" name="nom">
+      					<input type="text" class="form-control" id="nomMateriel" placeholder="Nom" name="nom" required>
     				</div>
 				</div>
   				<div class="form-group">
     				<label for="description">Description</label>
-    				<input type="text" class="form-control" id="description" placeholder="Description" name="description">
+    				<input type="text" class="form-control" id="description" placeholder="Description" name="description" required>
  				</div>
   				<div class="form-row">
     				<div class="form-group col-md-4">
       					<label for="dateAchat">Date d'achat</label>
-      					<input type="date" class="form-control" id="dateAchat" name="dateAchat">
+      					<input type="date" class="form-control" id="dateAchat" name="dateAchat" required>
     				</div>
     				<div class="form-group col-md-4">
       					<label for="prixAchat">Prix d'achat</label>
-      					<input type="number" class="form-control" id="prixAchat" placeholder="Prix d'achat" name="prixAchat">
+      					<input type="number" class="form-control" id="prixAchat" placeholder="Prix d'achat" name="prixAchat" required>
     				</div>
   				</div>
   				<div class="form-group">
@@ -41,15 +41,8 @@
 	        				{% endfor %}
 						</select>
  				</div>
-				 <!--
-			<span class="right-align">
-				<button type="button" class=" btn btn-success btn-add-materiel" aria-label="Left Align" onclick="ajouterMateriel();">
-				<i class="fa fa-plus"></i>
-				Ajouter
-				</button>
-			</span>
-			-->
-			<input class="btn btn-lg btn-primary btn-block" type='submit' value= 'OK'/>
+
+			<input class="btn btn-lg btn-primary btn-block" type='submit' value= 'Ajouter'/>
 
 			</form>
     	</div>

@@ -2,7 +2,7 @@
 
   <div class="page">
     <button type="button" class="btn btn-link"><a href="materiel.php">&lt Retour</a></button>
-    <h2> Materiel Details {{ id }}</h2>
+    <h2> Materiel Details </h2>
     
     <ul class="list-group">
       <li class="list-group-item" >ID :{{ spec.Id }}</li>
@@ -12,9 +12,10 @@
       <li class="list-group-item" >DateAchat : {{ spec.DateAchat }}</li>
       <span class="right-align">
 				<button type="button" class=" btn btn-success btn-add-materiel" aria-label="Left Align" onclick="toggleEmprunt({{spec.Id}});">
-				<i class="fa fa-plus"></i>
-				Emprunter
+					<i class="fa fa-plus"></i>
+					Emprunter
 				</button>
+				<input class=btn btn-success btn-add-materiel" aria-label="Left Align" type='submit' value= 'Supprimer'/>
 		  </span>
     </ul>
   </div>

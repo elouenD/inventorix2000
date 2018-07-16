@@ -6,5 +6,7 @@ $nav = (object) ['accueil' => false, 'materiel' => true, 'emprunt' => false, 'ut
 
 $id = $_GET['id'];
 $materielSpec = materielInfoSpec($id);
+//$supprimer = deleteMateriel($id);
+
 
 echo $twig->render('materiel-detail.twig', ['id' => $id, 'nav' => $nav, 'spec'=>$materielSpec[0]]);

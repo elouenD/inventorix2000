@@ -2,7 +2,45 @@
 
   <div class="page">
     <button type="button" class="btn btn-link"><a href="utilisateur.php">&lt Retour</a></button>
-    <h2> Utilisateur Create</h2>
+    <h2>
+      Formulaire d'ajout de d'utilisateur
+    </h2>
+    <br>
+    <form  action ='confirmation.php' method='post'>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="codeBarre">Code Barre</label>
+          <input type="number" class="form-control" id="codeBarre" placeholder="Code Barre" name="code">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="nomMateriel">Nom</label>
+          <input type="text" class="form-control" id="nomMateriel" placeholder="Nom" name="nom">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="Description" name="description">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="dateAchat">Date d'achat</label>
+          <input type="date" class="form-control" id="dateAchat" name="dateAchat">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="prixAchat">Prix d'achat</label>
+          <input type="number" class="form-control" id="prixAchat" placeholder="Prix d'achat" name="prixAchat">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="fournisseur">Fournisseur</label>
+        <select id="inputState" name='fournisseur' class="form-control" >
+            {% for fournisseur in fournisseur %}
+              <option value="{{fournisseur.Id}}">{{ fournisseur.Nom }}</option>
+            {% endfor %}
+        </select>
+      </div>
+      <input type='submit' value= 'OK'/>
+    </form>
   </div>
 
 {% include('footer.twig') %}

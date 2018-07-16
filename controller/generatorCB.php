@@ -5,7 +5,7 @@ include('./assets/pi_barcode.php');
 
 
 // Set navigation
-$nav = (object) ['accueil' => false, 'materiel' => false, 'emprunt' => true, 'utilisateur' => false, 'etudiant' => false];
+$nav = (object) ['accueil' => false, 'materiel' => false, 'emprunt' => false, 'utilisateur' => false, 'etudiant' => false,'codeBarre'=>true];
 
 echo $twig->render('generatorCB.twig', ['name' => "page emprunt", 'autre' => "autre chose", 'nav' => $nav ]);
 

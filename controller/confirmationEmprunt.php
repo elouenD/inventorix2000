@@ -7,7 +7,7 @@ $pret = new pret(
     '',
     $_POST["dateDebut"],
     $_POST["dateFinPrevu"],
-    $_POST["dateRendu"],
+    "",
     $_POST["utilisateurId"],
     $_POST["materielId"]
 );

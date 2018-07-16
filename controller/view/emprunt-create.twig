@@ -10,17 +10,13 @@
 	<br>
 	<form  action ='confirmationEmprunt.php' method='post'>
 		<div class="form-row">
-			<div class="form-group col-md-4">
+			<div class="form-group col-md-6">
 				<label for="dateDebut">Date de début</label>
 				<input type="date" class="form-control" id="dateDebut" name="dateDebut">
 			</div>
-			<div class="form-group col-md-4">
+			<div class="form-group col-md-6">
 				<label for="dateFinPrevu">Date de fin Prevu</label>
 				<input type="date" class="form-control" id="dateFinPrevu" name="dateFinPrevu">
-			</div>
-			<div class="form-group col-md-4">
-				<label for="dateRendu">Date de rendu</label>
-				<input type="date" class="form-control" id="dateRendu" name="dateRendu">
 			</div>
 		</div>
 
@@ -33,7 +29,7 @@
 			</select>
 			<br><br><br>
 
-			<label for="materielId">Materiels</label>
+			<label for="	materielId">Materiels</label>
 			<select id="inputState" name='materielId' class="form-control" >
                 {% for materielInfo in materielInfos %}
 					<option value="{{materielInfo.Id}}">{{ materielInfo.Nom }}</option>

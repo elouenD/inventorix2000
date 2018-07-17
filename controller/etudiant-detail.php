@@ -25,3 +25,4 @@ else{
     $urlprofil="index.php";
     $session = "Rien";
 }
+?>

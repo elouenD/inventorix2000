@@ -11,11 +11,11 @@
         <li class="list-group-item" >Login : {{ userInfo.Login }}</li>
         <br />
         <span class="right-align">
-        <button type="button" class=" btn btn-success btn-add-materiel" data-toggle="modal" data-target="#deleteEtudiantModal">
+        <button type="button" class=" btn btn-danger btn-add-materiel" data-toggle="modal" data-target="#deleteEtudiantModal">
                 <i class="fa fa-trash"></i>
               Supprimer
         </button>
-        <button type="button" class=" btn btn-success btn-add-materiel" data-toggle="modal" data-target="#updateEtudiantModal">
+        <button type="button" class=" btn btn-primary btn-add-materiel" data-toggle="modal" data-target="#updateEtudiantModal">
                 <i class="fa fa-edit"></i>
               Modifier
           </button>
@@ -60,16 +60,17 @@
                                 <input type='text' readonly="disabled" value="{{userInfo.Prenom}}" id="updateDesc" />
 
                                 <br/>
+                                <br/>
                                 <label for="mailUtilisateur">Mail</label>
-                                <input type="email" class="form-control" id="description" placeholder="mail" name="mail"/>
-
+                                <input type="email" class="form-control" id="description" placeholder="mail" name="mail" value="{{ userInfo.Mail }}" required/>
+                                <br/>
                                 <label for="nomUtilisateur">Login</label>
-                                <input type="text" class="form-control" id="description" placeholder="login" name="login"/>
+                                <input type="text" class="form-control" id="description" placeholder="login" name="login" value="{{ userInfo.Login }}" required/>
                             </div>
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <input type='submit' value= 'Modifier'/>
+                    <input class="btn btn-lg btn-primary btn-block" type='submit' value= 'Modifier'/>
                     </form>
 
                 </div>

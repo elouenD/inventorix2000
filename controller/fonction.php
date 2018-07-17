@@ -302,7 +302,7 @@ function statsEmprunt(){
     $bdd=NULL;
     //appel de dbConnect pour instancier une connexion à la base de donnée
     $bdd=dbConnect();
-    $statement = $bdd->prepare("SELECT COUNT(*) FROM `pret` WHERE (`DateRendu`>NOW() or `DateRendu`is NULL)");
+    $statement = $bdd->prepare("SELECT COUNT(*) FROM `pret` WHERE `DateRendu`is NULL");
     $statement->execute();
     $statEmprunt = $statement->fetch();
     $statEmprunt=$statEmprunt[0];

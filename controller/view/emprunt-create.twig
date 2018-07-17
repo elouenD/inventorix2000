@@ -1,46 +1,47 @@
 {% include('header.twig') %}
 <?php include('../fonction.php');?>
-<br><br><br>
 
-<div class="container">
-	<button type="button" class="btn btn-link"><a href="emprunt.php">&lt Retour</a></button>
-	<h2>
-		Formulaire d'emprunt
-	</h2>
-	<br>
-	<form  action ='confirmationEmprunt.php' method='post'>
-		<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="dateDebut">Date de début</label>
-				<input type="date" class="form-control" id="dateDebut" name="dateDebut">
+<section class="py-5">
+	<div class="container">
+		<button type="button" class="btn btn-link"><a href="emprunt.php">&lt Retour</a></button>
+		<h2>
+			Formulaire d'emprunt
+		</h2>
+		<br>
+		<form  action ='confirmationEmprunt.php' method='post'>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="dateDebut">Date de début</label>
+					<input type="date" class="form-control" id="dateDebut" name="dateDebut" required>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="dateFinPrevu">Date de fin Prevu</label>
+					<input type="date" class="form-control" id="dateFinPrevu" name="dateFinPrevu" required>
+				</div>
 			</div>
-			<div class="form-group col-md-6">
-				<label for="dateFinPrevu">Date de fin Prevu</label>
-				<input type="date" class="form-control" id="dateFinPrevu" name="dateFinPrevu">
+
+			<div class="form-row">
+				<label for="utilisateurId">Etudiants</label>
+				<select id="inputState" name='utilisateurId' class="form-control" >
+					{% for etudiantInfo in etudiantInfos %}
+						<option value="{{etudiantInfo.Id}}">{{ etudiantInfo.Nom }}</option>
+					{% endfor %}
+				</select>
+				<br><br><br>
+
+				<label for="	materielId">Materiels</label>
+				<select id="inputState" name='materielId' class="form-control" >
+					{% for materielInfo in materielInfos %}
+						<option value="{{materielInfo.Id}}">{{ materielInfo.Nom }}</option>
+					{% endfor %}
+				</select>
+				<br><br><br>
 			</div>
-		</div>
 
-		<div class="form-row">
-			<label for="utilisateurId">Etudiants</label>
-			<select id="inputState" name='utilisateurId' class="form-control" >
-                {% for etudiantInfo in etudiantInfos %}
-					<option value="{{etudiantInfo.Id}}">{{ etudiantInfo.Nom }}</option>
-                {% endfor %}
-			</select>
-			<br><br><br>
-
-			<label for="	materielId">Materiels</label>
-			<select id="inputState" name='materielId' class="form-control" >
-                {% for materielInfo in materielInfos %}
-					<option value="{{materielInfo.Id}}">{{ materielInfo.Nom }}</option>
-                {% endfor %}
-			</select>
-			<br><br><br>
-		</div>
-
-		<input type='submit' value= 'OK'/>
-	</form>
-</div>
+			<input class="btn btn-lg btn-primary btn-block" type='submit' value= 'Ajouter'/>
+		</form>
+	</div>
+</section>
 
 
 

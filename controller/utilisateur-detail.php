@@ -7,7 +7,7 @@ require("fonction.php");
 
 if(isset($_SESSION['id'])){
     // Set navigation
-    $nav = (object) ['accueil' => false, 'materiel' => true, 'emprunt' => false, 'utilisateur' => false, 'etudiant' => false];
+    $nav = (object) ['accueil' => false, 'materiel' => false, 'emprunt' => false, 'utilisateur' => true, 'etudiant' => false];
     if(isset($_GET['idToDelete'])){
         $idToDelete = $_GET['idToDelete'];
         echo("test");

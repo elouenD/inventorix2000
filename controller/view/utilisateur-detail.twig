@@ -54,12 +54,15 @@
                 <div class="modal-body">
                     <form method='post' action = 'confirmationUpdateUtilisateur.php'>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <input type='text' readonly="readonly" value="{{userInfo.Id}}" id="updateDesc" name="id"/>
-                                <input type='text' readonly="disabled" value="{{userInfo.Nom}}" id="updateDesc" />
-                                <input type='text' readonly="disabled" value="{{userInfo.Prenom}}" id="updateDesc" />
-
+                            <div class="form-group col-md-12">
+                                <label for="idUtilisateur">Id</label>
+                                <input name="id" readonly="readonly" type="text" class="form-control" id="updateDesc" name="id" value="{{ userInfo.Id }}" />
                                 <br/>
+                                <label for="nomUtilisateur">Nom</label>
+                                <input type="text" readonly="readonly" class="form-control" id="updateDesc" name="nom" value="{{ userInfo.Nom }}" />
+                                <br/>
+                                <label for="prenomUtilisateur">Prenom</label>
+                                <input type="text" readonly="readonly" class="form-control" id="updateDesc" name="prenom" value="{{ userInfo.Prenom }}" />
                                 <br/>
                                 <label for="mailUtilisateur">Mail</label>
                                 <input type="email" class="form-control" id="description" placeholder="mail" name="mail" value="{{ userInfo.Mail }}" required/>
